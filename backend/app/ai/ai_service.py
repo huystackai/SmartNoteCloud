@@ -137,6 +137,15 @@ class AIService:
         ascii_text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii")
         return re.sub(r"\s+", " ", ascii_text.lower()).strip()
 
+    def _plain_chat_text(self, text: str) -> str:
+        cleaned = self._strip_code_fence(text)
+        cleaned = re.sub(r"^\s{0,3}#{1,6}\s*", "", cleaned, flags=re.MULTILINE)
+        cleaned = re.sub(r"^\s{0,3}>\s?", "", cleaned, flags=re.MULTILINE)
+        cleaned = cleaned.replace("**", "").replace("__", "").replace("`", "")
+        cleaned = re.sub(r"[ \t]+\n", "\n", cleaned)
+        cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
+        return cleaned.strip()
+
     def rule_based_chat(self, question: str) -> str | None:
         text = self._normalize_text(question)
         if not text:
@@ -251,16 +260,18 @@ class AIService:
             "Tra loi cau hoi cua nguoi dung bang tieng Viet, ngan gon va ro rang. "
             "Neu cau hoi lien quan den MindDeckNote, cloud, note, flashcard, AI API, FastAPI, React, Docker, Nginx "
             "thi uu tien cau tra loi thuc te va co cau truc. "
+            "Khong dung markdown, khong dung heading ##, khong boc chu bang **. "
             "Khong bia dat thong tin rieng tu hoac cau hinh khong co trong cau hoi.\n\n"
             f"Question: {question}"
         )
-        return await self._complete(
+        answer = await self._complete(
             self._chat_payload(
-                "You are a friendly in-app AI assistant for MindDeckNote. Respond in Vietnamese.",
+                "You are a friendly in-app AI assistant for MindDeckNote. Respond in Vietnamese plain text.",
                 prompt,
                 temperature=0.3,
             )
         )
+        return self._plain_chat_text(answer)
 
     async def generate_flashcards(self, title: str, content: str, max_cards: int = 8) -> list[dict[str, str]]:
         prompt = (

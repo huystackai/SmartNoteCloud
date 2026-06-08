@@ -893,6 +893,24 @@ button:disabled {
   line-height: 1.6;
 }
 
+.typing-answer::after {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 1.05em;
+  margin-left: 3px;
+  border-radius: 999px;
+  background: var(--accent);
+  vertical-align: -0.18em;
+  animation: typing-caret 920ms steps(2, end) infinite;
+}
+
+@keyframes typing-caret {
+  50% {
+    opacity: 0;
+  }
+}
+
 .chat-answer {
   justify-self: start;
   width: min(740px, 92%);

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { ChatCircleDots, PaperPlaneRight } from '@phosphor-icons/react';
 import { api, getToken, setToken } from './api/client';
 import AuthPanel from './components/AuthPanel';
@@ -34,6 +34,23 @@ function contentPreview(blocks) {
   return blocks.map((block) => block.content).filter(Boolean).join('\n').slice(0, 280);
 }
 
+function cleanChatText(text = '') {
+  return String(text)
+    .replace(/\r\n/g, '\n')
+    .replace(/^#{1,6}\s*/gm, '')
+    .replace(/^\s{0,3}>\s?/gm, '')
+    .replace(/\*\*/g, '')
+    .replace(/__/g, '')
+    .replace(/`/g, '')
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+function cleanChatMessage(message) {
+  return { ...message, answer: cleanChatText(message.answer) };
+}
+
 export default function App() {
   const [user, setUser] = useState(null);
   const [workspace, setWorkspace] = useState(null);
@@ -65,6 +82,8 @@ export default function App() {
   const [reviewRevealed, setReviewRevealed] = useState(false);
   const [notice, setNotice] = useState('');
   const [error, setError] = useState('');
+  const chatTypingTimer = useRef(null);
+  const chatSubmitting = useRef(false);
 
   const activeDeck = useMemo(
     () => decks.find((deck) => deck.id === Number(activeDeckId)) || decks[0],
@@ -159,6 +178,12 @@ export default function App() {
       loadChat();
     }
   }, [activeView, chatLoaded]);
+
+  useEffect(() => () => {
+    if (chatTypingTimer.current) {
+      window.clearTimeout(chatTypingTimer.current);
+    }
+  }, []);
 
   async function createPage() {
     if (!workspace) return;
@@ -290,9 +315,13 @@ export default function App() {
 
   async function loadChat() {
     setError('');
+    if (chatTypingTimer.current) {
+      window.clearTimeout(chatTypingTimer.current);
+      chatTypingTimer.current = null;
+    }
     try {
       const history = await api.chatHistory();
-      setChatMessages(history.messages || []);
+      setChatMessages((history.messages || []).map(cleanChatMessage));
       setChatQuota({ used: history.used, remaining: history.remaining, limit: history.limit });
       setChatLoaded(true);
     } catch (err) {
@@ -300,23 +329,81 @@ export default function App() {
     }
   }
 
-  async function sendChat(event) {
-    event.preventDefault();
-    const question = chatQuestion.trim();
-    if (!question || chatLoading || chatQuota.remaining <= 0) return;
+  function animateChatAnswer(tempId, message) {
+    const finalMessage = cleanChatMessage(message);
+    const fullAnswer = finalMessage.answer;
+    const chunkSize = Math.max(1, Math.ceil(fullAnswer.length / 120));
+    let index = 0;
 
+    if (chatTypingTimer.current) {
+      window.clearTimeout(chatTypingTimer.current);
+    }
+    setChatMessages((current) =>
+      current.map((item) => (item.id === tempId ? { ...finalMessage, answer: '', isTyping: true } : item))
+    );
+
+    const typeNext = () => {
+      index = Math.min(index + chunkSize, fullAnswer.length);
+      setChatMessages((current) =>
+        current.map((item) =>
+          item.id === finalMessage.id
+            ? { ...item, answer: fullAnswer.slice(0, index), isTyping: index < fullAnswer.length }
+            : item
+        )
+      );
+      if (index < fullAnswer.length) {
+        chatTypingTimer.current = window.setTimeout(typeNext, 18);
+      } else {
+        chatTypingTimer.current = null;
+      }
+    };
+
+    typeNext();
+  }
+
+  async function submitChatQuestion() {
+    const question = chatQuestion.trim();
+    if (!question || chatLoading || chatQuota.remaining <= 0 || chatSubmitting.current) return;
+
+    const tempId = `pending-${Date.now()}`;
+    chatSubmitting.current = true;
     setChatLoading(true);
     setError('');
+    setChatQuestion('');
+    setChatMessages((current) => [
+      ...current,
+      {
+        id: tempId,
+        question,
+        answer: 'Đang suy nghĩ...',
+        source: 'ai',
+        created_at: new Date().toISOString(),
+        pending: true
+      }
+    ]);
     try {
       const result = await api.askChat({ question });
-      setChatMessages((current) => [...current, result.message]);
+      animateChatAnswer(tempId, result.message);
       setChatQuota({ used: result.used, remaining: result.remaining, limit: result.limit });
-      setChatQuestion('');
     } catch (err) {
       setError(err.message);
+      setChatMessages((current) => current.filter((message) => message.id !== tempId));
       await loadChat();
     } finally {
+      chatSubmitting.current = false;
       setChatLoading(false);
+    }
+  }
+
+  async function sendChat(event) {
+    event.preventDefault();
+    await submitChatQuestion();
+  }
+
+  function handleChatKeyDown(event) {
+    if (event.key === 'Enter' && !event.shiftKey && !event.nativeEvent.isComposing) {
+      event.preventDefault();
+      submitChatQuestion();
     }
   }
 
@@ -376,6 +463,11 @@ export default function App() {
     setChatQuestion('');
     setChatQuota({ used: 0, remaining: 8, limit: 8 });
     setChatLoaded(false);
+    if (chatTypingTimer.current) {
+      window.clearTimeout(chatTypingTimer.current);
+      chatTypingTimer.current = null;
+    }
+    chatSubmitting.current = false;
     setActiveView('notes');
   }
 
@@ -617,7 +709,7 @@ export default function App() {
               <div className="chat-panel-header">
                 <div>
                   <h2>Chat AI</h2>
-                  <p>{chatMessages.length} câu đã hỏi trong tài khoản này</p>
+                  <p>{chatQuota.used} câu đã hỏi trong tài khoản này</p>
                 </div>
                 <button className="ghost-button small" onClick={loadChat} disabled={chatLoading}>Refresh</button>
               </div>
@@ -638,10 +730,12 @@ export default function App() {
                             <ChatCircleDots size={18} weight="duotone" />
                           </span>
                           <strong>MindDeck AI</strong>
-                          <mark className="source-pill">{message.source === 'rule' ? 'Rule based' : 'AI provider'}</mark>
+                          <mark className="source-pill">
+                            {message.pending ? 'Đang xử lý' : message.source === 'rule' ? 'Rule based' : 'AI provider'}
+                          </mark>
                         </div>
-                        <p>{message.answer}</p>
-                        <small>{new Date(message.created_at).toLocaleString('vi-VN')}</small>
+                        <p className={message.isTyping ? 'typing-answer' : ''}>{message.answer}</p>
+                        <small>{message.pending ? 'Đang nhận câu trả lời' : new Date(message.created_at).toLocaleString('vi-VN')}</small>
                       </div>
                     </article>
                   ))
@@ -653,6 +747,7 @@ export default function App() {
                   className="field-input chat-input"
                   value={chatQuestion}
                   onChange={(event) => setChatQuestion(event.target.value)}
+                  onKeyDown={handleChatKeyDown}
                   placeholder={chatQuota.remaining <= 0 ? 'Tài khoản đã hết lượt hỏi AI' : 'Nhập câu hỏi của bạn'}
                   rows={2}
                   disabled={chatLoading || chatQuota.remaining <= 0}
