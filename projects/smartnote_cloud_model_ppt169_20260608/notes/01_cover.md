@@ -1,0 +1,1 @@
+Trong bài báo cáo này, em trình bày SmartNoteCloud như một hệ thống học tập triển khai trên cloud, không chỉ là một ứng dụng web đơn lẻ. Điểm quan trọng là hệ thống đã có domain công khai, chạy qua HTTPS, đóng gói bằng Docker và dùng database thật. Từ đó, bài sẽ phân tích cách dự án thể hiện ba mô hình dịch vụ cloud: IaaS, PaaS và SaaS.

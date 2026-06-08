@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect x="0" y="0" width="1280" height="720" fill="#F8FAFC"/>
+  <text x="56" y="72" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="38" font-weight="700" fill="#0F172A">IaaS: AWS EC2 là nền hạ tầng của hệ thống</text>
+  <text x="58" y="112" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#475569">Infrastructure as a Service: thuê tài nguyên hạ tầng, còn hệ điều hành và runtime do nhóm tự quản lý.</text>
+
+  <rect x="72" y="160" width="354" height="420" rx="28" fill="#2563EB"/>
+  <use data-icon="tabler-outline/cloud-computing" x="112" y="202" width="54" height="54" fill="#FFFFFF" stroke-width="2"/>
+  <text x="112" y="292" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="700" fill="#FFFFFF">AWS cung cấp</text>
+  <text x="112" y="336" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#FFFFFF">Máy ảo EC2, public IP, VPC, Security Group và hạ tầng vật lý bên dưới.</text>
+  <rect x="112" y="402" width="252" height="50" rx="14" fill="#FFFFFF" fill-opacity="0.18" stroke="#FFFFFF"/>
+  <text x="134" y="434" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" fill="#FFFFFF">13.212.82.45</text>
+  <rect x="112" y="468" width="252" height="50" rx="14" fill="#FFFFFF" fill-opacity="0.18" stroke="#FFFFFF"/>
+  <text x="134" y="500" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" fill="#FFFFFF">Amazon Linux 2023</text>
+
+  <rect x="472" y="160" width="736" height="420" rx="28" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="514" y="218" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="26" font-weight="700" fill="#0F172A">Nhóm phát triển phải tự vận hành</text>
+  <text x="514" y="252" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">Đây là điểm phân biệt IaaS với PaaS: quyền kiểm soát cao hơn đi kèm trách nhiệm cao hơn.</text>
+
+  <rect x="520" y="300" width="286" height="76" rx="18" fill="#2563EB" fill-opacity="0.08" stroke="#2563EB"/>
+  <use data-icon="tabler-outline/server" x="544" y="322" width="30" height="30" fill="#2563EB" stroke-width="2"/>
+  <text x="588" y="333" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A">OS và SSH</text>
+  <text x="588" y="358" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#475569">User ec2-user, key pair, update hệ điều hành</text>
+
+  <rect x="850" y="300" width="286" height="76" rx="18" fill="#2563EB" fill-opacity="0.08" stroke="#2563EB"/>
+  <use data-icon="tabler-outline/brand-docker" x="874" y="322" width="30" height="30" fill="#2563EB" stroke-width="2"/>
+  <text x="918" y="333" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A">Container runtime</text>
+  <text x="918" y="358" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#475569">Build image, compose up, restart policy</text>
+
+  <rect x="520" y="406" width="286" height="76" rx="18" fill="#2563EB" fill-opacity="0.08" stroke="#2563EB"/>
+  <use data-icon="tabler-outline/route" x="544" y="428" width="30" height="30" fill="#2563EB" stroke-width="2"/>
+  <text x="588" y="439" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A">Reverse proxy</text>
+  <text x="588" y="464" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#475569">Nginx route frontend và backend API</text>
+
+  <rect x="850" y="406" width="286" height="76" rx="18" fill="#2563EB" fill-opacity="0.08" stroke="#2563EB"/>
+  <use data-icon="tabler-outline/certificate" x="874" y="428" width="30" height="30" fill="#2563EB" stroke-width="2"/>
+  <text x="918" y="439" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A">SSL và renewal</text>
+  <text x="918" y="464" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#475569">Certbot, HTTPS, lịch gia hạn định kỳ</text>
+
+  <rect x="520" y="512" width="616" height="42" rx="14" fill="#0F172A"/>
+  <text x="548" y="539" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" fill="#FFFFFF">docker ps → nginx, frontend, backend, postgres đều Up</text>
+
+  <rect x="160" y="616" width="960" height="44" rx="16" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="190" y="644" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Kết luận: EC2 phù hợp để chứng minh IaaS vì nhóm phải xử lý gần như toàn bộ tầng vận hành phía trên VM.</text>
+
+  <text x="56" y="690" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#94A3B8">09 · IaaS on EC2</text>
+</svg>

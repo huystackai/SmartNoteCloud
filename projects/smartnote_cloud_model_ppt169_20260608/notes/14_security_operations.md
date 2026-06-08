@@ -1,0 +1,1 @@
+Khi chạy cloud, các điểm bảo mật tối thiểu gồm kiểm soát cổng bằng Security Group, dùng HTTPS cho domain, giữ secret trong biến môi trường và theo dõi container bằng docker ps, logs hoặc health endpoint. Với môi trường production, cần nâng cấp thêm bằng giới hạn SSH theo IP, Secrets Manager, backup tự động, monitoring và rate limit ở gateway.

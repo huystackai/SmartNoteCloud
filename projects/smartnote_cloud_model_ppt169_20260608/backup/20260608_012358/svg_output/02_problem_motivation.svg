@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect x="0" y="0" width="1280" height="720" fill="#F8FAFC"/>
+  <text x="56" y="72" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="38" font-weight="700" fill="#0F172A">Vấn đề: không chỉ làm app, mà phải chứng minh được Cloud</text>
+  <rect x="56" y="98" width="1168" height="50" rx="14" fill="#2563EB" fill-opacity="0.08"/>
+  <text x="78" y="129" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#0F172A">Mục tiêu báo cáo: có quy trình chạy thật, có kiến trúc rõ và phân biệt được IaaS, PaaS, SaaS bằng chính project.</text>
+  <g id="problem-cards">
+    <rect x="68" y="190" width="340" height="290" rx="18" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <use data-icon="tabler-outline/user" x="94" y="220" width="34" height="34" fill="#2563EB" stroke-width="2"/>
+    <text x="94" y="284" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="700" fill="#0F172A">Người học cần công cụ</text>
+    <text x="94" y="326" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">Ghi chú rời rạc khó ôn tập.</text>
+    <text x="94" y="358" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">Flashcard thủ công tốn thời gian.</text>
+    <text x="94" y="390" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">AI giúp tóm tắt và tạo câu hỏi.</text>
+    <rect x="470" y="190" width="340" height="290" rx="18" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <use data-icon="tabler-outline/cloud-computing" x="496" y="220" width="34" height="34" fill="#F59E0B" stroke-width="2"/>
+    <text x="496" y="284" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="700" fill="#0F172A">Báo cáo Cloud cần bằng chứng</text>
+    <text x="496" y="326" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">Không dừng ở localhost.</text>
+    <text x="496" y="358" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">Cần domain, HTTPS, Docker, DB.</text>
+    <text x="496" y="390" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">Có health check và dữ liệu thật.</text>
+    <rect x="872" y="190" width="340" height="290" rx="18" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <use data-icon="tabler-outline/layers-linked" x="898" y="220" width="34" height="34" fill="#00A676" stroke-width="2"/>
+    <text x="898" y="284" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="700" fill="#0F172A">Cần nhìn ra service model</text>
+    <text x="898" y="326" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">EC2 là IaaS.</text>
+    <text x="898" y="358" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">Beanstalk/App Runner là PaaS.</text>
+    <text x="898" y="390" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">Mimo AI API là SaaS/API service.</text>
+  </g>
+  <rect x="112" y="532" width="1056" height="82" rx="20" fill="#0F172A"/>
+  <text x="146" y="568" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">Insight báo cáo</text>
+  <text x="146" y="598" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#CBD5E1">SmartNoteCloud được thiết kế như một demo cloud-native nhỏ nhưng có đủ thành phần để giải thích hạ tầng, nền tảng và dịch vụ.</text>
+  <text x="56" y="690" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#94A3B8">02 · Problem &amp; Motivation</text>
+</svg>

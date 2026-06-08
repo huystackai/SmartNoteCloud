@@ -1,0 +1,1 @@
+Phần SaaS nằm ở dịch vụ AI bên ngoài. Thay vì tự triển khai model, GPU và inference server, backend gọi Mimo AI API qua HTTPS bằng API key. Hệ thống chỉ cần chuẩn hóa prompt, gửi request và lưu kết quả. Đây là cách dùng Software as a Service: tận dụng năng lực đã được nhà cung cấp vận hành sẵn.

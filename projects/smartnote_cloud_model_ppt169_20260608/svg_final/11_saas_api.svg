@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect x="0" y="0" width="1280" height="720" fill="#F8FAFC" />
+  <text x="56" y="72" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="38" font-weight="700" fill="#0F172A">SaaS: dùng dịch vụ AI qua API</text>
+  <text x="58" y="112" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#475569">Software as a Service xuất hiện ở tầng tính năng AI: hệ thống gọi dịch vụ đã vận hành sẵn thay vì tự triển khai model.</text>
+
+  <path fill="#FFFFFF" stroke="#CBD5E1" d="M108,168 H386 A26,26 0 0 1 412,194 V514 A26,26 0 0 1 386,540 H108 A26,26 0 0 1 82,514 V194 A26,26 0 0 1 108,168 Z" />
+  
+  <g transform="translate(124.0, 216.0) scale(1.9166666666666667)" fill="none" stroke="#2563EB" stroke-width="2">
+    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+  </g>
+  <text x="124" y="296" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="700" fill="#0F172A">Người học</text>
+  <text x="124" y="330" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">Viết note hoặc chọn nội dung cần tóm tắt, tạo flashcard.</text>
+  <path fill="#2563EB" fill-opacity="0.08" stroke="#2563EB" d="M138,402 H334 A14,14 0 0 1 348,416 V440 A14,14 0 0 1 334,454 H138 A14,14 0 0 1 124,440 V416 A14,14 0 0 1 138,402 Z" />
+  <text x="150" y="435" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" fill="#2563EB">POST /api/ai/...</text>
+
+  <polygon points="444,336 486,354 444,372" fill="#CBD5E1" />
+  <path fill="#FFFFFF" stroke="#CBD5E1" d="M542,168 H820 A26,26 0 0 1 846,194 V514 A26,26 0 0 1 820,540 H542 A26,26 0 0 1 516,514 V194 A26,26 0 0 1 542,168 Z" />
+  
+  <g transform="translate(558.0, 216.0) scale(1.9166666666666667)" fill="none" stroke="#00A676" stroke-width="2">
+    <path d="M4 13h5" />
+    <path d="M12 16v-8h3a2 2 0 0 1 2 2v1a2 2 0 0 1 -2 2h-3" />
+    <path d="M20 8v8" />
+    <path d="M9 16v-5.5a2.5 2.5 0 0 0 -5 0v5.5" />
+  </g>
+  <text x="558" y="296" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="700" fill="#0F172A">FastAPI backend</text>
+  <text x="558" y="330" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">Chuẩn hóa prompt, gọi API, lưu kết quả vào PostgreSQL.</text>
+  <path fill="#00A676" fill-opacity="0.08" stroke="#00A676" d="M572,402 H768 A14,14 0 0 1 782,416 V440 A14,14 0 0 1 768,454 H572 A14,14 0 0 1 558,440 V416 A14,14 0 0 1 572,402 Z" />
+  <text x="584" y="435" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" fill="#00A676">MIMO_API_KEY</text>
+
+  <polygon points="878,336 920,354 878,372" fill="#CBD5E1" />
+  <path fill="#00A676" d="M976,168 H1172 A26,26 0 0 1 1198,194 V514 A26,26 0 0 1 1172,540 H976 A26,26 0 0 1 950,514 V194 A26,26 0 0 1 976,168 Z" />
+  
+  <g transform="translate(992.0, 216.0) scale(2.0833333333333335)" fill="none" stroke="#FFFFFF" stroke-width="2">
+    <path d="M19 18a3.5 3.5 0 0 0 0 -7h-1c.397 -1.768 -.285 -3.593 -1.788 -4.787c-1.503 -1.193 -3.6 -1.575 -5.5 -1s-3.315 2.019 -3.712 3.787c-2.199 -.088 -4.155 1.326 -4.666 3.373c-.512 2.047 .564 4.154 2.566 5.027" />
+    <path d="M8 16a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1l0 -3" />
+    <path d="M10 15v-2a2 2 0 1 1 4 0v2" />
+  </g>
+  <text x="992" y="296" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">Mimo AI API</text>
+  <text x="992" y="330" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#FFFFFF">Dịch vụ AI bên ngoài cung cấp khả năng sinh nội dung.</text>
+  <path fill="#FFFFFF" fill-opacity="0.18" stroke="#FFFFFF" d="M1006,402 H1128 A14,14 0 0 1 1142,416 V440 A14,14 0 0 1 1128,454 H1006 A14,14 0 0 1 992,440 V416 A14,14 0 0 1 1006,402 Z" />
+  <text x="1018" y="435" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" fill="#FFFFFF">HTTPS API</text>
+
+  <path fill="#FFFFFF" stroke="#CBD5E1" d="M138,586 H362 A18,18 0 0 1 380,604 V638 A18,18 0 0 1 362,656 H138 A18,18 0 0 1 120,638 V604 A18,18 0 0 1 138,586 Z" />
+  
+  <g transform="translate(144.0, 606.0) scale(1.25)" fill="none" stroke="#00A676" stroke-width="2">
+    <path d="M5 12l5 5l10 -10" />
+  </g>
+  <text x="188" y="631" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Không mua GPU, không host model</text>
+  <path fill="#FFFFFF" stroke="#CBD5E1" d="M528,586 H752 A18,18 0 0 1 770,604 V638 A18,18 0 0 1 752,656 H528 A18,18 0 0 1 510,638 V604 A18,18 0 0 1 528,586 Z" />
+  
+  <g transform="translate(534.0, 606.0) scale(1.25)" fill="none" stroke="#00A676" stroke-width="2">
+    <path d="M16.555 3.843l3.602 3.602a2.877 2.877 0 0 1 0 4.069l-2.643 2.643a2.877 2.877 0 0 1 -4.069 0l-.301 -.301l-6.558 6.558a2 2 0 0 1 -1.239 .578l-.175 .008h-1.172a1 1 0 0 1 -.993 -.883l-.007 -.117v-1.172a2 2 0 0 1 .467 -1.284l.119 -.13l.414 -.414h2v-2h2v-2l2.144 -2.144l-.301 -.301a2.877 2.877 0 0 1 0 -4.069l2.643 -2.643a2.877 2.877 0 0 1 4.069 0" />
+    <path d="M15 9h.01" />
+  </g>
+  <text x="578" y="631" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Bảo vệ key bằng biến môi trường</text>
+  <path fill="#FFFFFF" stroke="#CBD5E1" d="M918,586 H1142 A18,18 0 0 1 1160,604 V638 A18,18 0 0 1 1142,656 H918 A18,18 0 0 1 900,638 V604 A18,18 0 0 1 918,586 Z" />
+  
+  <g transform="translate(924.0, 606.0) scale(1.25)" fill="none" stroke="#00A676" stroke-width="2">
+    <path d="M4 6a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+    <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+    <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+  </g>
+  <text x="968" y="631" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Lưu output AI thành thẻ học</text>
+
+  <text x="56" y="690" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#94A3B8">11 · SaaS AI API</text>
+</svg>

@@ -1,0 +1,1 @@
+Nếu chuyển sang PaaS, một phần trách nhiệm vận hành sẽ được nền tảng đảm nhiệm. Ví dụ App Runner hoặc Elastic Beanstalk có thể hỗ trợ runtime, health check, scaling và deployment flow tốt hơn. Trong dự án hiện tại, nhóm đang dùng IaaS là chính; PaaS được đưa vào để so sánh và chỉ ra hướng giảm tải vận hành trong tương lai.

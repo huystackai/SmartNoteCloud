@@ -1,0 +1,1 @@
+Kiến trúc tổng quan gồm browser ở phía người dùng, Nginx làm gateway, React phục vụ giao diện, FastAPI xử lý nghiệp vụ và PostgreSQL lưu dữ liệu. Bên ngoài hệ thống còn có Mimo AI API, được gọi qua HTTPS. Điểm cần nhấn mạnh là toàn bộ stack ứng dụng chạy trong Docker trên EC2, còn database không mở trực tiếp ra Internet.

@@ -1,0 +1,1 @@
+Ở cấp request, cùng một domain nhưng có hai nhánh xử lý. Nếu người dùng truy cập giao diện, Nginx trả về React static build. Nếu request đi vào đường dẫn API, Nginx chuyển tiếp sang FastAPI backend. Backend kiểm tra JWT, đọc ghi PostgreSQL và khi cần thì gọi AI API. Cách tách route này giúp kiến trúc rõ ràng và dễ mở rộng.

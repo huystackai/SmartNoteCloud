@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect x="0" y="0" width="1280" height="720" fill="#F8FAFC" />
+  <text x="56" y="72" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="38" font-weight="700" fill="#0F172A">Dữ liệu học tập trong PostgreSQL</text>
+  <text x="58" y="112" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#475569">Database nằm trong container riêng, truy cập quản trị qua SSH tunnel thay vì mở public port.</text>
+
+  <path fill="#FFFFFF" stroke="#CBD5E1" d="M92,154 H840 A26,26 0 0 1 866,180 V558 A26,26 0 0 1 840,584 H92 A26,26 0 0 1 66,558 V180 A26,26 0 0 1 92,154 Z" />
+  <text x="104" y="204" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" font-weight="700" fill="#0F172A">Mô hình dữ liệu chính</text>
+
+  <path fill="#2563EB" fill-opacity="0.08" stroke="#2563EB" d="M128,252 H238 A16,16 0 0 1 254,268 V302 A16,16 0 0 1 238,318 H128 A16,16 0 0 1 112,302 V268 A16,16 0 0 1 128,252 Z" />
+  <text x="142" y="280" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" font-weight="700" fill="#0F172A">users</text>
+  <text x="144" y="303" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="13" fill="#475569">9 rows</text>
+
+  <polygon points="276,272 310,285 276,298" fill="#CBD5E1" />
+  <path fill="#2563EB" fill-opacity="0.08" stroke="#2563EB" d="M350,252 H476 A16,16 0 0 1 492,268 V302 A16,16 0 0 1 476,318 H350 A16,16 0 0 1 334,302 V268 A16,16 0 0 1 350,252 Z" />
+  <text x="362" y="280" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" font-weight="700" fill="#0F172A">workspaces</text>
+  <text x="382" y="303" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="13" fill="#475569">9 rows</text>
+
+  <polygon points="514,272 548,285 514,298" fill="#CBD5E1" />
+  <path fill="#2563EB" fill-opacity="0.08" stroke="#2563EB" d="M588,252 H698 A16,16 0 0 1 714,268 V302 A16,16 0 0 1 698,318 H588 A16,16 0 0 1 572,302 V268 A16,16 0 0 1 588,252 Z" />
+  <text x="614" y="280" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" font-weight="700" fill="#0F172A">pages</text>
+  <text x="622" y="303" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="13" fill="#475569">9 rows</text>
+
+  <line x1="643" y1="318" x2="643" y2="374" stroke="#CBD5E1" stroke-width="3" />
+  <polygon points="629,360 643,394 657,360" fill="#CBD5E1" />
+  <path fill="#F59E0B" fill-opacity="0.12" stroke="#F59E0B" d="M588,402 H698 A16,16 0 0 1 714,418 V452 A16,16 0 0 1 698,468 H588 A16,16 0 0 1 572,452 V418 A16,16 0 0 1 588,402 Z" />
+  <text x="611" y="430" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" font-weight="700" fill="#0F172A">blocks</text>
+  <text x="618" y="453" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="13" fill="#475569">37 rows</text>
+
+  <line x1="413" y1="318" x2="413" y2="374" stroke="#CBD5E1" stroke-width="3" />
+  <polygon points="399,360 413,394 427,360" fill="#CBD5E1" />
+  <path fill="#00A676" fill-opacity="0.08" stroke="#00A676" d="M350,402 H476 A16,16 0 0 1 492,418 V452 A16,16 0 0 1 476,468 H350 A16,16 0 0 1 334,452 V418 A16,16 0 0 1 350,402 Z" />
+  <text x="384" y="430" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" font-weight="700" fill="#0F172A">decks</text>
+  <text x="386" y="453" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="13" fill="#475569">9 rows</text>
+
+  <polygon points="514,421 548,434 514,447" fill="#CBD5E1" />
+  <path fill="#00A676" fill-opacity="0.08" stroke="#00A676" d="M758,402 H818 A16,16 0 0 1 834,418 V452 A16,16 0 0 1 818,468 H758 A16,16 0 0 1 742,452 V418 A16,16 0 0 1 758,402 Z" />
+  <text x="766" y="430" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" font-weight="700" fill="#0F172A">cards</text>
+  <text x="768" y="453" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="13" fill="#475569">9 rows</text>
+  <line x1="714" y1="435" x2="742" y2="435" stroke="#CBD5E1" stroke-width="3" />
+
+  <line x1="788" y1="468" x2="788" y2="516" stroke="#CBD5E1" stroke-width="3" />
+  <polygon points="774,502 788,536 802,502" fill="#CBD5E1" />
+  <path fill="#00A676" d="M694,536 H822 A12,12 0 0 1 834,548 V558 A12,12 0 0 1 822,570 H694 A12,12 0 0 1 682,558 V548 A12,12 0 0 1 694,536 Z" />
+  <text x="706" y="558" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="13" fill="#FFFFFF">card_reviews: 9</text>
+
+  <path fill="#0F172A" d="M938,154 H1186 A26,26 0 0 1 1212,180 V558 A26,26 0 0 1 1186,584 H938 A26,26 0 0 1 912,558 V180 A26,26 0 0 1 938,154 Z" />
+  
+  <g transform="translate(954.0, 204.0) scale(1.75)" fill="none" stroke="#00A676" stroke-width="2">
+    <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6" />
+    <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+    <path d="M8 11v-4a4 4 0 1 1 8 0v4" />
+  </g>
+  <text x="954" y="284" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">Truy cập an toàn</text>
+  <text x="954" y="326" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#CBD5E1">DBeaver không kết nối trực tiếp Internet đến database.</text>
+  <path fill="#FFFFFF" fill-opacity="0.12" stroke="#CBD5E1" d="M968,386 H1150 A14,14 0 0 1 1164,400 V424 A14,14 0 0 1 1150,438 H968 A14,14 0 0 1 954,424 V400 A14,14 0 0 1 968,386 Z" />
+  <text x="982" y="418" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="14" fill="#FFFFFF">localhost:5432</text>
+  <path fill="#FFFFFF" fill-opacity="0.12" stroke="#CBD5E1" d="M968,456 H1150 A14,14 0 0 1 1164,470 V494 A14,14 0 0 1 1150,508 H968 A14,14 0 0 1 954,494 V470 A14,14 0 0 1 968,456 Z" />
+  <text x="982" y="488" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="14" fill="#FFFFFF">SSH tunnel EC2</text>
+
+  <path fill="#FFFFFF" stroke="#CBD5E1" d="M144,616 H1136 A18,18 0 0 1 1154,634 V646 A18,18 0 0 1 1136,664 H144 A18,18 0 0 1 126,646 V634 A18,18 0 0 1 144,616 Z" />
+  <text x="154" y="646" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Ý nghĩa cloud: DB chạy gần backend để giảm độ trễ, đồng thời giảm rủi ro vì không public cổng PostgreSQL.</text>
+
+  <text x="56" y="690" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#94A3B8">13 · Database Data Flow</text>
+</svg>

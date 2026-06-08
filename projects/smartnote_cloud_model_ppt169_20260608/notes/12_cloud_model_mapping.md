@@ -1,0 +1,1 @@
+Slide này tổng hợp ba mô hình cloud trong cùng một hệ thống. EC2 là IaaS vì cung cấp hạ tầng máy chủ. PaaS là hướng nâng cấp có thể dùng để giảm công việc vận hành. SaaS là dịch vụ AI API được tích hợp vào tính năng sản phẩm. Như vậy, một dự án thực tế có thể không chỉ thuộc một mô hình duy nhất, mà kết hợp nhiều tầng khác nhau.

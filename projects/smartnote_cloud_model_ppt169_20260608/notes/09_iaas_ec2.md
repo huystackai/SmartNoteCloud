@@ -1,0 +1,1 @@
+Phần IaaS thể hiện rõ nhất ở EC2. AWS cung cấp máy ảo, public IP, network và Security Group, nhưng nhóm vẫn phải tự quản hệ điều hành, Docker, Nginx, SSL, log và backup. Vì vậy EC2 cho quyền kiểm soát cao, nhưng trách nhiệm vận hành cũng cao. Đây là ví dụ điển hình của Infrastructure as a Service.

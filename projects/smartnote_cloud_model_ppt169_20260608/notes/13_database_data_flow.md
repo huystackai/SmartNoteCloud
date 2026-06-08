@@ -1,0 +1,1 @@
+Database lưu các thực thể học tập như users, workspaces, pages, blocks, decks, cards và card reviews. Các bảng này cho thấy hệ thống đã có dữ liệu thật chứ không chỉ là giao diện demo. Về bảo mật, PostgreSQL không public ra ngoài; khi cần xem bằng DBeaver, ta đi qua SSH tunnel vào EC2. Cách này phù hợp hơn so với mở thẳng cổng 5432 ra Internet.

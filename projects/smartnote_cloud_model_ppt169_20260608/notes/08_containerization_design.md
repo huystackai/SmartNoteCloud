@@ -1,0 +1,1 @@
+Docker Compose giúp tách từng thành phần thành container riêng. Nginx là cổng public duy nhất, frontend và backend nằm trong network nội bộ, còn PostgreSQL chạy trong container database có volume để giữ dữ liệu. Cách đóng gói này giúp triển khai nhất quán hơn giữa máy local và EC2, đồng thời giảm lỗi do khác môi trường.

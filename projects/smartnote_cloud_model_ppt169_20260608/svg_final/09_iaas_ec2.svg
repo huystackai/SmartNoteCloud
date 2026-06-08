@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect x="0" y="0" width="1280" height="720" fill="#F8FAFC" />
+  <text x="56" y="72" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="38" font-weight="700" fill="#0F172A">IaaS: AWS EC2 là nền hạ tầng của hệ thống</text>
+  <text x="58" y="112" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#475569">Infrastructure as a Service: thuê tài nguyên hạ tầng, còn hệ điều hành và runtime do nhóm tự quản lý.</text>
+
+  <path fill="#2563EB" d="M100,160 H398 A28,28 0 0 1 426,188 V552 A28,28 0 0 1 398,580 H100 A28,28 0 0 1 72,552 V188 A28,28 0 0 1 100,160 Z" />
+  
+  <g transform="translate(112.0, 202.0) scale(2.25)" fill="none" stroke="#FFFFFF" stroke-width="2">
+    <path d="M6.657 16c-2.572 0 -4.657 -2.007 -4.657 -4.483c0 -2.475 2.085 -4.482 4.657 -4.482c.393 -1.762 1.794 -3.2 3.675 -3.773c1.88 -.572 3.956 -.193 5.444 1c1.488 1.19 2.162 3.007 1.77 4.769h.99c1.913 0 3.464 1.56 3.464 3.486c0 1.927 -1.551 3.487 -3.465 3.487h-11.878" />
+    <path d="M12 16v5" />
+    <path d="M16 16v4a1 1 0 0 0 1 1h4" />
+    <path d="M8 16v4a1 1 0 0 1 -1 1h-4" />
+  </g>
+  <text x="112" y="292" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="700" fill="#FFFFFF">AWS cung cấp</text>
+  <text x="112" y="336" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#FFFFFF">Máy ảo EC2, public IP, VPC, Security Group và hạ tầng vật lý bên dưới.</text>
+  <path fill="#FFFFFF" fill-opacity="0.18" stroke="#FFFFFF" d="M126,402 H350 A14,14 0 0 1 364,416 V438 A14,14 0 0 1 350,452 H126 A14,14 0 0 1 112,438 V416 A14,14 0 0 1 126,402 Z" />
+  <text x="134" y="434" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" fill="#FFFFFF">13.212.82.45</text>
+  <path fill="#FFFFFF" fill-opacity="0.18" stroke="#FFFFFF" d="M126,468 H350 A14,14 0 0 1 364,482 V504 A14,14 0 0 1 350,518 H126 A14,14 0 0 1 112,504 V482 A14,14 0 0 1 126,468 Z" />
+  <text x="134" y="500" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" fill="#FFFFFF">Amazon Linux 2023</text>
+
+  <path fill="#FFFFFF" stroke="#CBD5E1" d="M500,160 H1180 A28,28 0 0 1 1208,188 V552 A28,28 0 0 1 1180,580 H500 A28,28 0 0 1 472,552 V188 A28,28 0 0 1 500,160 Z" />
+  <text x="514" y="218" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="26" font-weight="700" fill="#0F172A">Nhóm phát triển phải tự vận hành</text>
+  <text x="514" y="252" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">Đây là điểm phân biệt IaaS với PaaS: quyền kiểm soát cao hơn đi kèm trách nhiệm cao hơn.</text>
+
+  <path fill="#2563EB" fill-opacity="0.08" stroke="#2563EB" d="M538,300 H788 A18,18 0 0 1 806,318 V358 A18,18 0 0 1 788,376 H538 A18,18 0 0 1 520,358 V318 A18,18 0 0 1 538,300 Z" />
+  
+  <g transform="translate(544.0, 322.0) scale(1.25)" fill="none" stroke="#2563EB" stroke-width="2">
+    <path d="M3 7a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3" />
+    <path d="M3 15a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3l0 -2" />
+    <path d="M7 8l0 .01" />
+    <path d="M7 16l0 .01" />
+  </g>
+  <text x="588" y="333" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A">OS và SSH</text>
+  <text x="588" y="358" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#475569">User ec2-user, key pair, update hệ điều hành</text>
+
+  <path fill="#2563EB" fill-opacity="0.08" stroke="#2563EB" d="M868,300 H1118 A18,18 0 0 1 1136,318 V358 A18,18 0 0 1 1118,376 H868 A18,18 0 0 1 850,358 V318 A18,18 0 0 1 868,300 Z" />
+  
+  <g transform="translate(874.0, 322.0) scale(1.25)" fill="none" stroke="#2563EB" stroke-width="2">
+    <path d="M22 12.54c-1.804 -.345 -2.701 -1.08 -3.523 -2.94c-.487 .696 -1.102 1.568 -.92 2.4c.028 .238 -.32 1 -.557 1h-14c0 5.208 3.164 7 6.196 7c4.124 .022 7.828 -1.376 9.854 -5c1.146 -.101 2.296 -1.505 2.95 -2.46" />
+    <path d="M5 10h3v3h-3l0 -3" />
+    <path d="M8 10h3v3h-3l0 -3" />
+    <path d="M11 10h3v3h-3l0 -3" />
+    <path d="M8 7h3v3h-3l0 -3" />
+    <path d="M11 7h3v3h-3l0 -3" />
+    <path d="M11 4h3v3h-3l0 -3" />
+    <path d="M4.571 18c1.5 0 2.047 -.074 2.958 -.78" />
+    <path d="M10 16l0 .01" />
+  </g>
+  <text x="918" y="333" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A">Container runtime</text>
+  <text x="918" y="358" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#475569">Build image, compose up, restart policy</text>
+
+  <path fill="#2563EB" fill-opacity="0.08" stroke="#2563EB" d="M538,406 H788 A18,18 0 0 1 806,424 V464 A18,18 0 0 1 788,482 H538 A18,18 0 0 1 520,464 V424 A18,18 0 0 1 538,406 Z" />
+  
+  <g transform="translate(544.0, 428.0) scale(1.25)" fill="none" stroke="#2563EB" stroke-width="2">
+    <path d="M3 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+    <path d="M19 7a2 2 0 1 0 0 -4a2 2 0 0 0 0 4" />
+    <path d="M11 19h5.5a3.5 3.5 0 0 0 0 -7h-8a3.5 3.5 0 0 1 0 -7h4.5" />
+  </g>
+  <text x="588" y="439" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A">Reverse proxy</text>
+  <text x="588" y="464" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#475569">Nginx route frontend và backend API</text>
+
+  <path fill="#2563EB" fill-opacity="0.08" stroke="#2563EB" d="M868,406 H1118 A18,18 0 0 1 1136,424 V464 A18,18 0 0 1 1118,482 H868 A18,18 0 0 1 850,464 V424 A18,18 0 0 1 868,406 Z" />
+  
+  <g transform="translate(874.0, 428.0) scale(1.25)" fill="none" stroke="#2563EB" stroke-width="2">
+    <path d="M12 15a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+    <path d="M13 17.5v4.5l2 -1.5l2 1.5v-4.5" />
+    <path d="M10 19h-5a2 2 0 0 1 -2 -2v-10c0 -1.1 .9 -2 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -1 1.73" />
+    <path d="M6 9l12 0" />
+    <path d="M6 12l3 0" />
+    <path d="M6 15l2 0" />
+  </g>
+  <text x="918" y="439" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A">SSL và renewal</text>
+  <text x="918" y="464" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#475569">Certbot, HTTPS, lịch gia hạn định kỳ</text>
+
+  <path fill="#0F172A" d="M534,512 H1122 A14,14 0 0 1 1136,526 V540 A14,14 0 0 1 1122,554 H534 A14,14 0 0 1 520,540 V526 A14,14 0 0 1 534,512 Z" />
+  <text x="548" y="539" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" fill="#FFFFFF">docker ps → nginx, frontend, backend, postgres đều Up</text>
+
+  <path fill="#FFFFFF" stroke="#CBD5E1" d="M176,616 H1104 A16,16 0 0 1 1120,632 V644 A16,16 0 0 1 1104,660 H176 A16,16 0 0 1 160,644 V632 A16,16 0 0 1 176,616 Z" />
+  <text x="190" y="644" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Kết luận: EC2 phù hợp để chứng minh IaaS vì nhóm phải xử lý gần như toàn bộ tầng vận hành phía trên VM.</text>
+
+  <text x="56" y="690" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#94A3B8">09 · IaaS on EC2</text>
+</svg>

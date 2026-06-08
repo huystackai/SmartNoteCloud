@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect x="0" y="0" width="1280" height="720" fill="#F8FAFC"/>
+  <image href="../images/cover_cloud_architecture.png" x="610" y="70" width="600" height="338" preserveAspectRatio="xMidYMid slice"/>
+  <rect x="0" y="0" width="1280" height="720" fill="#F8FAFC" fill-opacity="0.42"/>
+  <rect x="56" y="54" width="1168" height="612" rx="28" fill="#FFFFFF" fill-opacity="0.86" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="90" y="92" width="54" height="8" rx="4" fill="#2563EB"/>
+  <text x="90" y="166" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="66" font-weight="700" fill="#0F172A">
+    SmartNoteCloud
+  </text>
+  <text x="94" y="214" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="26" font-weight="600" fill="#475569">
+    Báo cáo môn Cloud Computing
+  </text>
+  <text x="94" y="258" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#475569">
+    Ứng dụng ghi chú AI và flashcard triển khai cloud-native trên AWS EC2
+  </text>
+  <g id="service-model-strip">
+    <rect x="94" y="338" width="178" height="74" rx="16" fill="#2563EB" fill-opacity="0.10" stroke="#2563EB" stroke-width="1.5"/>
+    <text x="118" y="370" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="700" fill="#2563EB">IaaS</text>
+    <text x="118" y="394" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#475569">AWS EC2</text>
+    <rect x="294" y="338" width="178" height="74" rx="16" fill="#F59E0B" fill-opacity="0.12" stroke="#F59E0B" stroke-width="1.5"/>
+    <text x="318" y="370" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="700" fill="#F59E0B">PaaS</text>
+    <text x="318" y="394" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#475569">Beanstalk/App Runner</text>
+    <rect x="494" y="338" width="178" height="74" rx="16" fill="#00A676" fill-opacity="0.12" stroke="#00A676" stroke-width="1.5"/>
+    <text x="518" y="370" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="700" fill="#00A676">SaaS</text>
+    <text x="518" y="394" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#475569">Mimo AI API</text>
+  </g>
+  <g id="architecture-mini">
+    <rect x="764" y="426" width="376" height="144" rx="20" fill="#0F172A"/>
+    <text x="790" y="462" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" fill="#94A3B8">production endpoint</text>
+    <text x="790" y="500" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="26" font-weight="700" fill="#FFFFFF">https://pkiresearch.id.vn</text>
+    <rect x="790" y="526" width="106" height="30" rx="15" fill="#16A34A" fill-opacity="0.18" stroke="#16A34A" stroke-width="1"/>
+    <text x="813" y="547" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" font-weight="700" fill="#16A34A">HTTPS OK</text>
+    <rect x="910" y="526" width="112" height="30" rx="15" fill="#2563EB" fill-opacity="0.18" stroke="#2563EB" stroke-width="1"/>
+    <text x="935" y="547" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" font-weight="700" fill="#2563EB">Docker</text>
+  </g>
+  <text x="94" y="626" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#94A3B8">Repo: huystackai/SmartNoteCloud · Cloud-native demo · React + FastAPI + PostgreSQL + Nginx</text>
+</svg>

@@ -1,0 +1,1 @@
+Luồng sử dụng chính bắt đầu từ việc người học tạo note. Nội dung note đi qua backend, backend xử lý hoặc gửi sang AI API, sau đó tạo ra summary hoặc flashcard. Khi người dùng ôn tập, kết quả review tiếp tục được lưu vào database. Quy trình này cho thấy cloud không chỉ là nơi host website, mà còn là nơi điều phối dữ liệu và dịch vụ.

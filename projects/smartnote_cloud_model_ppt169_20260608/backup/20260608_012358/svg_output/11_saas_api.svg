@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect x="0" y="0" width="1280" height="720" fill="#F8FAFC"/>
+  <text x="56" y="72" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="38" font-weight="700" fill="#0F172A">SaaS: dùng dịch vụ AI qua API</text>
+  <text x="58" y="112" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#475569">Software as a Service xuất hiện ở tầng tính năng AI: hệ thống gọi dịch vụ đã vận hành sẵn thay vì tự triển khai model.</text>
+
+  <rect x="82" y="168" width="330" height="372" rx="26" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <use data-icon="tabler-outline/user" x="124" y="216" width="46" height="46" fill="#2563EB" stroke-width="2"/>
+  <text x="124" y="296" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="700" fill="#0F172A">Người học</text>
+  <text x="124" y="330" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">Viết note hoặc chọn nội dung cần tóm tắt, tạo flashcard.</text>
+  <rect x="124" y="402" width="224" height="52" rx="14" fill="#2563EB" fill-opacity="0.08" stroke="#2563EB"/>
+  <text x="150" y="435" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" fill="#2563EB">POST /api/ai/...</text>
+
+  <polygon points="444,336 486,354 444,372" fill="#CBD5E1"/>
+  <rect x="516" y="168" width="330" height="372" rx="26" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <use data-icon="tabler-outline/api" x="558" y="216" width="46" height="46" fill="#00A676" stroke-width="2"/>
+  <text x="558" y="296" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="700" fill="#0F172A">FastAPI backend</text>
+  <text x="558" y="330" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">Chuẩn hóa prompt, gọi API, lưu kết quả vào PostgreSQL.</text>
+  <rect x="558" y="402" width="224" height="52" rx="14" fill="#00A676" fill-opacity="0.08" stroke="#00A676"/>
+  <text x="584" y="435" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" fill="#00A676">MIMO_API_KEY</text>
+
+  <polygon points="878,336 920,354 878,372" fill="#CBD5E1"/>
+  <rect x="950" y="168" width="248" height="372" rx="26" fill="#00A676"/>
+  <use data-icon="tabler-outline/cloud-lock" x="992" y="216" width="50" height="50" fill="#FFFFFF" stroke-width="2"/>
+  <text x="992" y="296" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">Mimo AI API</text>
+  <text x="992" y="330" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#FFFFFF">Dịch vụ AI bên ngoài cung cấp khả năng sinh nội dung.</text>
+  <rect x="992" y="402" width="150" height="52" rx="14" fill="#FFFFFF" fill-opacity="0.18" stroke="#FFFFFF"/>
+  <text x="1018" y="435" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" fill="#FFFFFF">HTTPS API</text>
+
+  <rect x="120" y="586" width="260" height="70" rx="18" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <use data-icon="tabler-outline/check" x="144" y="606" width="30" height="30" fill="#00A676" stroke-width="2"/>
+  <text x="188" y="631" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Không mua GPU, không host model</text>
+  <rect x="510" y="586" width="260" height="70" rx="18" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <use data-icon="tabler-outline/key" x="534" y="606" width="30" height="30" fill="#00A676" stroke-width="2"/>
+  <text x="578" y="631" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Bảo vệ key bằng biến môi trường</text>
+  <rect x="900" y="586" width="260" height="70" rx="18" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <use data-icon="tabler-outline/database" x="924" y="606" width="30" height="30" fill="#00A676" stroke-width="2"/>
+  <text x="968" y="631" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Lưu output AI thành thẻ học</text>
+
+  <text x="56" y="690" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#94A3B8">11 · SaaS AI API</text>
+</svg>

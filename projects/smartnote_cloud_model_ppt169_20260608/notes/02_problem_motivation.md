@@ -1,0 +1,1 @@
+Vấn đề xuất phát từ nhu cầu học tập: người dùng có ghi chú, nhưng cần một công cụ giúp biến ghi chú thành tài liệu ôn tập có cấu trúc hơn. Đồng thời, với môn Cloud, nhóm cần một ví dụ có thể chứng minh bằng deployment thật. Vì vậy SmartNoteCloud được chọn làm case study: vừa có sản phẩm, vừa có hạ tầng, vừa có dữ liệu để quan sát.

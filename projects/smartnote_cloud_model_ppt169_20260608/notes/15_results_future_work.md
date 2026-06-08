@@ -1,0 +1,1 @@
+Kết quả cuối cùng là SmartNoteCloud đã có domain HTTPS, stack Docker chạy ổn định, database có dữ liệu và backend tích hợp AI API. Dự án chứng minh được IaaS qua EC2, SaaS qua AI API và chỉ ra hướng PaaS để tối ưu vận hành. Nếu phát triển tiếp, nên tách database sang RDS, đưa secret vào Secrets Manager, bổ sung CI/CD, monitoring và cơ chế backup rõ ràng.

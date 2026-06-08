@@ -1,0 +1,1 @@
+SmartNoteCloud hay MindDeckNote Lite gồm bốn nhóm chức năng chính. Người dùng đăng nhập, tạo workspace và ghi chú; sau đó backend có thể gọi AI để tóm tắt hoặc sinh flashcard. Các flashcard này được lưu lại để người dùng ôn tập. Nhìn từ góc cloud, đây là một ứng dụng nhiều tầng: frontend, backend, database và dịch vụ AI bên ngoài.

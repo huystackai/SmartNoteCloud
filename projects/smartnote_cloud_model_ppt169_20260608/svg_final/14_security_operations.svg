@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect x="0" y="0" width="1280" height="720" fill="#F8FAFC" />
+  <text x="56" y="72" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="38" font-weight="700" fill="#0F172A">Bảo mật và vận hành khi chạy trên cloud</text>
+  <text x="58" y="112" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#475569">Các cấu hình tối thiểu giúp demo cloud có thể truy cập công khai nhưng vẫn kiểm soát rủi ro.</text>
+
+  <path fill="#FFFFFF" stroke="#CBD5E1" d="M98,158 H310 A24,24 0 0 1 334,182 V454 A24,24 0 0 1 310,478 H98 A24,24 0 0 1 74,454 V182 A24,24 0 0 1 98,158 Z" />
+  
+  <g transform="translate(110.0, 198.0) scale(1.75)" fill="none" stroke="#2563EB" stroke-width="2">
+    <path d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3" />
+    <path d="M11 11a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+    <path d="M12 12l0 2.5" />
+  </g>
+  <text x="110" y="276" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="23" font-weight="700" fill="#0F172A">Network</text>
+  <text x="110" y="318" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Security Group chỉ mở 80, 443 và SSH.</text>
+  <text x="110" y="366" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">PostgreSQL không public ra Internet.</text>
+  <path fill="#2563EB" fill-opacity="0.08" stroke="#2563EB" d="M122,406 H262 A12,12 0 0 1 274,418 V430 A12,12 0 0 1 262,442 H122 A12,12 0 0 1 110,430 V418 A12,12 0 0 1 122,406 Z" />
+  <text x="132" y="429" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="13" fill="#2563EB">22 / 80 / 443</text>
+
+  <path fill="#FFFFFF" stroke="#CBD5E1" d="M400,158 H612 A24,24 0 0 1 636,182 V454 A24,24 0 0 1 612,478 H400 A24,24 0 0 1 376,454 V182 A24,24 0 0 1 400,158 Z" />
+  
+  <g transform="translate(412.0, 198.0) scale(1.75)" fill="none" stroke="#00A676" stroke-width="2">
+    <path d="M12 15a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+    <path d="M13 17.5v4.5l2 -1.5l2 1.5v-4.5" />
+    <path d="M10 19h-5a2 2 0 0 1 -2 -2v-10c0 -1.1 .9 -2 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -1 1.73" />
+    <path d="M6 9l12 0" />
+    <path d="M6 12l3 0" />
+    <path d="M6 15l2 0" />
+  </g>
+  <text x="412" y="276" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="23" font-weight="700" fill="#0F172A">HTTPS</text>
+  <text x="412" y="318" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Let's Encrypt cấp chứng chỉ cho domain.</text>
+  <text x="412" y="366" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">HTTP redirect sang HTTPS qua Nginx.</text>
+  <path fill="#00A676" fill-opacity="0.08" stroke="#00A676" d="M424,406 H564 A12,12 0 0 1 576,418 V430 A12,12 0 0 1 564,442 H424 A12,12 0 0 1 412,430 V418 A12,12 0 0 1 424,406 Z" />
+  <text x="434" y="429" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="13" fill="#00A676">HTTP/2 200</text>
+
+  <path fill="#FFFFFF" stroke="#CBD5E1" d="M702,158 H914 A24,24 0 0 1 938,182 V454 A24,24 0 0 1 914,478 H702 A24,24 0 0 1 678,454 V182 A24,24 0 0 1 702,158 Z" />
+  
+  <g transform="translate(714.0, 198.0) scale(1.75)" fill="none" stroke="#F59E0B" stroke-width="2">
+    <path d="M16.555 3.843l3.602 3.602a2.877 2.877 0 0 1 0 4.069l-2.643 2.643a2.877 2.877 0 0 1 -4.069 0l-.301 -.301l-6.558 6.558a2 2 0 0 1 -1.239 .578l-.175 .008h-1.172a1 1 0 0 1 -.993 -.883l-.007 -.117v-1.172a2 2 0 0 1 .467 -1.284l.119 -.13l.414 -.414h2v-2h2v-2l2.144 -2.144l-.301 -.301a2.877 2.877 0 0 1 0 -4.069l2.643 -2.643a2.877 2.877 0 0 1 4.069 0" />
+    <path d="M15 9h.01" />
+  </g>
+  <text x="714" y="276" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="23" font-weight="700" fill="#0F172A">Secrets</text>
+  <text x="714" y="318" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">JWT secret, DB password và AI key nằm trong .env.</text>
+  <text x="714" y="366" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Repo dùng .env.example để tránh lộ secret thật.</text>
+  <path fill="#F59E0B" fill-opacity="0.12" stroke="#F59E0B" d="M726,406 H866 A12,12 0 0 1 878,418 V430 A12,12 0 0 1 866,442 H726 A12,12 0 0 1 714,430 V418 A12,12 0 0 1 726,406 Z" />
+  <text x="736" y="429" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="13" fill="#F59E0B">.env.example</text>
+
+  <path fill="#FFFFFF" stroke="#CBD5E1" d="M1004,158 H1182 A24,24 0 0 1 1206,182 V454 A24,24 0 0 1 1182,478 H1004 A24,24 0 0 1 980,454 V182 A24,24 0 0 1 1004,158 Z" />
+  
+  <g transform="translate(1016.0, 198.0) scale(1.75)" fill="none" stroke="#0F172A" stroke-width="2">
+    <path d="M20 4v.01" />
+    <path d="M20 20v.01" />
+    <path d="M20 16v.01" />
+    <path d="M20 12v.01" />
+    <path d="M20 8v.01" />
+    <path d="M8 5a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1l0 -14" />
+    <path d="M4 4v.01" />
+    <path d="M4 20v.01" />
+    <path d="M4 16v.01" />
+    <path d="M4 12v.01" />
+    <path d="M4 8v.01" />
+  </g>
+  <text x="1016" y="276" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="23" font-weight="700" fill="#0F172A">Ops</text>
+  <text x="1016" y="318" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Theo dõi docker ps, logs và health endpoint.</text>
+  <text x="1016" y="366" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Certbot timer hỗ trợ gia hạn SSL.</text>
+  <path fill="#0F172A" d="M1028,406 H1148 A12,12 0 0 1 1160,418 V430 A12,12 0 0 1 1148,442 H1028 A12,12 0 0 1 1016,430 V418 A12,12 0 0 1 1028,406 Z" />
+  <text x="1036" y="429" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="13" fill="#FFFFFF">/api/health</text>
+
+  <path fill="#0F172A" d="M112,528 H1162 A24,24 0 0 1 1186,552 V596 A24,24 0 0 1 1162,620 H112 A24,24 0 0 1 88,596 V552 A24,24 0 0 1 112,528 Z" />
+  <text x="128" y="566" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">Các điểm nên nâng cấp nếu đưa vào production</text>
+  <text x="128" y="600" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#CBD5E1">Giới hạn SSH theo IP, dùng Secrets Manager, backup tự động, monitoring, WAF hoặc rate limit ở gateway.</text>
+
+  <text x="56" y="690" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#94A3B8">14 · Security and Operations</text>
+</svg>

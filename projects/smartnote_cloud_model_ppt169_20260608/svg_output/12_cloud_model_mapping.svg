@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect x="0" y="0" width="1280" height="720" fill="#F8FAFC"/>
+  <image href="../images/iaas_paas_saas_layers.png" x="0" y="0" width="1280" height="720" preserveAspectRatio="xMidYMid slice"/>
+  <rect x="0" y="0" width="1280" height="720" fill="#F8FAFC" fill-opacity="0.82"/>
+
+  <text x="56" y="78" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="46" font-weight="700" fill="#0F172A">Bản đồ IaaS · PaaS · SaaS trong SmartNoteCloud</text>
+  <text x="58" y="120" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#475569">Một hệ thống có thể kết hợp nhiều mô hình cloud ở các tầng khác nhau.</text>
+
+  <rect x="84" y="190" width="342" height="358" rx="28" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+  <rect x="110" y="218" width="74" height="74" rx="24" fill="#2563EB"/>
+  <use data-icon="tabler-outline/server" x="129" y="237" width="36" height="36" fill="#FFFFFF" stroke-width="2"/>
+  <text x="110" y="342" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="38" font-weight="700" fill="#2563EB">IaaS</text>
+  <text x="110" y="382" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="19" font-weight="700" fill="#0F172A">AWS EC2</text>
+  <text x="110" y="416" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Máy ảo, IP, Security Group, hạ tầng mạng.</text>
+  <text x="110" y="470" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#475569">Nhóm tự quản: OS, Docker, Nginx, SSL, backup.</text>
+
+  <rect x="469" y="190" width="342" height="358" rx="28" fill="#FFFFFF" stroke="#F59E0B" stroke-width="2"/>
+  <rect x="495" y="218" width="74" height="74" rx="24" fill="#F59E0B"/>
+  <use data-icon="tabler-outline/layers-linked" x="514" y="237" width="36" height="36" fill="#FFFFFF" stroke-width="2"/>
+  <text x="495" y="342" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="38" font-weight="700" fill="#F59E0B">PaaS</text>
+  <text x="495" y="382" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="19" font-weight="700" fill="#0F172A">Phương án mở rộng</text>
+  <text x="495" y="416" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">App Runner, Elastic Beanstalk hoặc managed DB.</text>
+  <text x="495" y="470" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#475569">Giảm quản trị máy chủ, tăng tốc triển khai.</text>
+
+  <rect x="854" y="190" width="342" height="358" rx="28" fill="#FFFFFF" stroke="#00A676" stroke-width="2"/>
+  <rect x="880" y="218" width="74" height="74" rx="24" fill="#00A676"/>
+  <use data-icon="tabler-outline/api" x="899" y="237" width="36" height="36" fill="#FFFFFF" stroke-width="2"/>
+  <text x="880" y="342" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="38" font-weight="700" fill="#00A676">SaaS</text>
+  <text x="880" y="382" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="19" font-weight="700" fill="#0F172A">Mimo AI API</text>
+  <text x="880" y="416" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Dịch vụ AI đã vận hành sẵn, gọi qua HTTPS.</text>
+  <text x="880" y="470" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#475569">Không tự triển khai model, GPU, inference stack.</text>
+
+  <rect x="170" y="594" width="940" height="54" rx="18" fill="#0F172A"/>
+  <text x="204" y="628" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">Thông điệp chính:</text>
+  <text x="368" y="628" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#FFFFFF">EC2 chứng minh IaaS; AI API chứng minh SaaS; PaaS là hướng tối ưu vận hành về sau.</text>
+
+  <text x="56" y="690" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#94A3B8">12 · Cloud Model Mapping</text>
+</svg>

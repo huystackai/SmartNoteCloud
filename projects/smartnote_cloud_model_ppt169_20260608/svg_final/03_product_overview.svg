@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect x="0" y="0" width="1280" height="720" fill="#F8FAFC" />
+  <text x="56" y="72" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="38" font-weight="700" fill="#0F172A">SmartNoteCloud là gì?</text>
+  <text x="58" y="112" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#475569">Một web app ghi chú AI và flashcard, đủ nhỏ để demo nhưng đủ thành phần để phân tích cloud-native.</text>
+  <g id="core">
+    <path fill="#2563EB" d="M476,206 H804 A28,28 0 0 1 832,234 V392 A28,28 0 0 1 804,420 H476 A28,28 0 0 1 448,392 V234 A28,28 0 0 1 476,206 Z" />
+    <text x="640" y="282" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">MindDeckNote Lite</text>
+    <text x="640" y="322" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#DBEAFE">Notes + AI Summary + Flashcards</text>
+    <path fill="#FFFFFF" fill-opacity="0.16" stroke="#FFFFFF" stroke-opacity="0.4" d="M578,350 H702 A18,18 0 0 1 720,368 V368 A18,18 0 0 1 702,386 H578 A18,18 0 0 1 560,368 V368 A18,18 0 0 1 578,350 Z" />
+    <text x="640" y="374" text-anchor="middle" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" fill="#FFFFFF">React / FastAPI</text>
+  </g>
+  <g id="feature-cards">
+    <path fill="#FFFFFF" stroke="#CBD5E1" d="M104,176 H348 A18,18 0 0 1 366,194 V284 A18,18 0 0 1 348,302 H104 A18,18 0 0 1 86,284 V194 A18,18 0 0 1 104,176 Z" />
+    <text x="112" y="218" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" font-weight="700" fill="#0F172A">Auth</text>
+    <text x="112" y="252" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Register, login, JWT</text>
+    <text x="112" y="276" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">bcrypt password hash</text>
+    <path fill="#FFFFFF" stroke="#CBD5E1" d="M104,356 H348 A18,18 0 0 1 366,374 V464 A18,18 0 0 1 348,482 H104 A18,18 0 0 1 86,464 V374 A18,18 0 0 1 104,356 Z" />
+    <text x="112" y="398" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" font-weight="700" fill="#0F172A">Notes</text>
+    <text x="112" y="432" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Workspace, page, block editor</text>
+    <text x="112" y="456" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Search nội dung</text>
+    <path fill="#FFFFFF" stroke="#CBD5E1" d="M932,176 H1176 A18,18 0 0 1 1194,194 V284 A18,18 0 0 1 1176,302 H932 A18,18 0 0 1 914,284 V194 A18,18 0 0 1 932,176 Z" />
+    <text x="940" y="218" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" font-weight="700" fill="#0F172A">AI</text>
+    <text x="940" y="252" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Summarize note</text>
+    <text x="940" y="276" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Generate flashcards</text>
+    <path fill="#FFFFFF" stroke="#CBD5E1" d="M932,356 H1176 A18,18 0 0 1 1194,374 V464 A18,18 0 0 1 1176,482 H932 A18,18 0 0 1 914,464 V374 A18,18 0 0 1 932,356 Z" />
+    <text x="940" y="398" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" font-weight="700" fill="#0F172A">Review</text>
+    <text x="940" y="432" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Deck, card, due cards</text>
+    <text x="940" y="456" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Again / Hard / Good / Easy</text>
+  </g>
+  <g id="connectors" stroke="#CBD5E1" stroke-width="2">
+    <line x1="366" y1="239" x2="448" y2="276" />
+    <line x1="366" y1="419" x2="448" y2="350" />
+    <line x1="832" y1="276" x2="914" y2="239" />
+    <line x1="832" y1="350" x2="914" y2="419" />
+  </g>
+  <path fill="#00A676" fill-opacity="0.10" stroke="#00A676" stroke-width="1.5" d="M204,552 H1076 A18,18 0 0 1 1094,570 V592 A18,18 0 0 1 1076,610 H204 A18,18 0 0 1 186,592 V570 A18,18 0 0 1 204,552 Z" />
+  <text x="640" y="588" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="19" font-weight="700" fill="#0F172A">Điểm quan trọng: sản phẩm đủ chức năng để tạo dữ liệu thật và kiểm chứng database khi demo.</text>
+  <text x="56" y="690" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#94A3B8">03 · Product Overview</text>
+</svg>

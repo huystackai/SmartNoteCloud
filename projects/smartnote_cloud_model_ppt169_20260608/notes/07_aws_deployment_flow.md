@@ -1,0 +1,1 @@
+Quy trình triển khai bắt đầu từ DNS trỏ domain pkiresearch.id.vn về public IP của EC2. Trên EC2, Security Group chỉ mở các cổng cần thiết, sau đó Nginx nhận request và chuyển tiếp vào các container. Chứng chỉ HTTPS được cấp bằng Let's Encrypt Certbot. Kết quả là website có thể truy cập công khai qua HTTPS và health check backend trả về trạng thái ok.

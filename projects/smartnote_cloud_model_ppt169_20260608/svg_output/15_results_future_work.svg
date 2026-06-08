@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect x="0" y="0" width="1280" height="720" fill="#0F172A"/>
+  <image href="../images/cover_cloud_architecture.png" x="710" y="0" width="570" height="720" preserveAspectRatio="xMidYMid slice"/>
+  <rect x="650" y="0" width="630" height="720" fill="#0F172A" fill-opacity="0.58"/>
+
+  <text x="64" y="90" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="46" font-weight="700" fill="#FFFFFF">Kết quả đạt được</text>
+  <text x="66" y="132" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#CBD5E1">SmartNoteCloud đã chạy công khai, có dữ liệu thật và chứng minh được các mô hình dịch vụ cloud.</text>
+
+  <rect x="74" y="190" width="250" height="124" rx="24" fill="#FFFFFF" fill-opacity="0.10" stroke="#CBD5E1"/>
+  <use data-icon="tabler-outline/world" x="104" y="218" width="36" height="36" fill="#00A676" stroke-width="2"/>
+  <text x="154" y="246" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">Domain HTTPS</text>
+  <text x="104" y="286" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="14" fill="#CBD5E1">pkiresearch.id.vn</text>
+
+  <rect x="354" y="190" width="250" height="124" rx="24" fill="#FFFFFF" fill-opacity="0.10" stroke="#CBD5E1"/>
+  <use data-icon="tabler-outline/brand-docker" x="384" y="218" width="36" height="36" fill="#00A676" stroke-width="2"/>
+  <text x="434" y="246" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">4 container Up</text>
+  <text x="384" y="286" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="14" fill="#CBD5E1">nginx / fe / be / db</text>
+
+  <rect x="74" y="344" width="250" height="124" rx="24" fill="#FFFFFF" fill-opacity="0.10" stroke="#CBD5E1"/>
+  <use data-icon="tabler-outline/database" x="104" y="372" width="36" height="36" fill="#00A676" stroke-width="2"/>
+  <text x="154" y="400" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">Database có dữ liệu</text>
+  <text x="104" y="440" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="14" fill="#CBD5E1">users, notes, cards</text>
+
+  <rect x="354" y="344" width="250" height="124" rx="24" fill="#FFFFFF" fill-opacity="0.10" stroke="#CBD5E1"/>
+  <use data-icon="tabler-outline/api" x="384" y="372" width="36" height="36" fill="#00A676" stroke-width="2"/>
+  <text x="434" y="400" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">AI qua SaaS API</text>
+  <text x="384" y="440" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="14" fill="#CBD5E1">summary + flashcard</text>
+
+  <rect x="74" y="520" width="530" height="84" rx="24" fill="#00A676"/>
+  <text x="108" y="554" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="19" font-weight="700" fill="#FFFFFF">Kết luận báo cáo</text>
+  <text x="108" y="584" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#FFFFFF">Dự án minh họa rõ cách triển khai ứng dụng SaaS-like trên nền IaaS và tích hợp dịch vụ SaaS bên ngoài.</text>
+
+  <rect x="734" y="104" width="426" height="436" rx="30" fill="#FFFFFF"/>
+  <text x="778" y="162" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="27" font-weight="700" fill="#0F172A">Hướng phát triển</text>
+  <rect x="778" y="208" width="326" height="46" rx="14" fill="#2563EB" fill-opacity="0.08" stroke="#2563EB"/>
+  <text x="804" y="237" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#0F172A">Tách PostgreSQL sang Amazon RDS</text>
+  <rect x="778" y="274" width="326" height="46" rx="14" fill="#F59E0B" fill-opacity="0.12" stroke="#F59E0B"/>
+  <text x="804" y="303" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#0F172A">Dùng App Runner hoặc ECS cho backend</text>
+  <rect x="778" y="340" width="326" height="46" rx="14" fill="#00A676" fill-opacity="0.08" stroke="#00A676"/>
+  <text x="804" y="369" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#0F172A">Secrets Manager cho API key và JWT</text>
+  <rect x="778" y="406" width="326" height="46" rx="14" fill="#2563EB" fill-opacity="0.08" stroke="#2563EB"/>
+  <text x="804" y="435" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#0F172A">CI/CD tự động build và deploy</text>
+  <rect x="778" y="472" width="326" height="46" rx="14" fill="#0F172A"/>
+  <text x="804" y="501" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#FFFFFF">Monitoring, backup, WAF, rate limit</text>
+
+  <text x="56" y="690" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#94A3B8">15 · Results and Future Work</text>
+</svg>

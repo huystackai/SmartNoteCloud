@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect x="0" y="0" width="1280" height="720" fill="#F8FAFC" />
+  <text x="56" y="72" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="38" font-weight="700" fill="#0F172A">Thiết kế container hóa bằng Docker Compose</text>
+  <text x="58" y="112" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#475569">Mỗi thành phần chạy độc lập, giao tiếp qua network nội bộ, chỉ gateway mở ra Internet.</text>
+
+  <path fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" d="M104,150 H1176 A28,28 0 0 1 1204,178 V552 A28,28 0 0 1 1176,580 H104 A28,28 0 0 1 76,552 V178 A28,28 0 0 1 104,150 Z" />
+  <path fill="#2563EB" fill-opacity="0.06" stroke="#2563EB" stroke-dasharray="8 8" d="M128,182 H1152 A24,24 0 0 1 1176,206 V516 A24,24 0 0 1 1152,540 H128 A24,24 0 0 1 104,516 V206 A24,24 0 0 1 128,182 Z" />
+  
+  <g transform="translate(128.0, 206.0) scale(1.4166666666666667)" fill="none" stroke="#2563EB" stroke-width="2">
+    <path d="M6 9a6 6 0 1 0 12 0a6 6 0 0 0 -12 0" />
+    <path d="M12 3c1.333 .333 2 2.333 2 6s-.667 5.667 -2 6" />
+    <path d="M12 3c-1.333 .333 -2 2.333 -2 6s.667 5.667 2 6" />
+    <path d="M6 9h12" />
+    <path d="M3 20h7" />
+    <path d="M14 20h7" />
+    <path d="M10 20a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+    <path d="M12 15v3" />
+  </g>
+  <text x="174" y="230" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="700" fill="#0F172A">minddeck internal Docker network</text>
+
+  <path fill="#0F172A" d="M150,298 H288 A18,18 0 0 1 306,316 V392 A18,18 0 0 1 288,410 H150 A18,18 0 0 1 132,392 V316 A18,18 0 0 1 150,298 Z" />
+  
+  <g transform="translate(154.0, 320.0) scale(1.4166666666666667)" fill="none" stroke="#FFFFFF" stroke-width="2">
+    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+    <path d="M3.6 9h16.8" />
+    <path d="M3.6 15h16.8" />
+    <path d="M11.5 3a17 17 0 0 0 0 18" />
+    <path d="M12.5 3a17 17 0 0 1 0 18" />
+  </g>
+  <text x="198" y="344" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">Internet</text>
+  <text x="154" y="382" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="14" fill="#94A3B8">80 / 443 public</text>
+
+  <polygon points="330,340 365,354 330,368" fill="#CBD5E1" />
+  <path fill="#FFFFFF" stroke="#2563EB" stroke-width="2" d="M416,276 H578 A22,22 0 0 1 600,298 V410 A22,22 0 0 1 578,432 H416 A22,22 0 0 1 394,410 V298 A22,22 0 0 1 416,276 Z" />
+  
+  <g transform="translate(420.0, 304.0) scale(1.5)" fill="none" stroke="#2563EB" stroke-width="2">
+    <path d="M3 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+    <path d="M19 7a2 2 0 1 0 0 -4a2 2 0 0 0 0 4" />
+    <path d="M11 19h5.5a3.5 3.5 0 0 0 0 -7h-8a3.5 3.5 0 0 1 0 -7h4.5" />
+  </g>
+  <text x="470" y="330" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="700" fill="#0F172A">minddeck-nginx</text>
+  <text x="420" y="368" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="14" fill="#475569">0.0.0.0:80 → 80</text>
+  <text x="420" y="395" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#475569">TLS termination, reverse proxy</text>
+
+  <line x1="600" y1="328" x2="680" y2="258" stroke="#CBD5E1" stroke-width="3" />
+  <polygon points="662,250 696,244 678,274" fill="#CBD5E1" />
+  <path fill="#FFFFFF" stroke="#CBD5E1" d="M736,204 H900 A20,20 0 0 1 920,224 V292 A20,20 0 0 1 900,312 H736 A20,20 0 0 1 716,292 V224 A20,20 0 0 1 736,204 Z" />
+  
+  <g transform="translate(742.0, 232.0) scale(1.4166666666666667)" fill="none" stroke="#2563EB" stroke-width="2">
+    <path d="M4 8h16" />
+    <path d="M4 6a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2l0 -12" />
+    <path d="M8 4v4" />
+  </g>
+  <text x="786" y="254" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A">frontend</text>
+  <text x="742" y="285" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="14" fill="#475569">React static build</text>
+
+  <line x1="600" y1="382" x2="680" y2="454" stroke="#CBD5E1" stroke-width="3" />
+  <polygon points="676,434 697,464 662,458" fill="#CBD5E1" />
+  <path fill="#FFFFFF" stroke="#CBD5E1" d="M736,410 H900 A20,20 0 0 1 920,430 V502 A20,20 0 0 1 900,522 H736 A20,20 0 0 1 716,502 V430 A20,20 0 0 1 736,410 Z" />
+  
+  <g transform="translate(742.0, 438.0) scale(1.4166666666666667)" fill="none" stroke="#00A676" stroke-width="2">
+    <path d="M4 13h5" />
+    <path d="M12 16v-8h3a2 2 0 0 1 2 2v1a2 2 0 0 1 -2 2h-3" />
+    <path d="M20 8v8" />
+    <path d="M9 16v-5.5a2.5 2.5 0 0 0 -5 0v5.5" />
+  </g>
+  <text x="786" y="460" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A">backend</text>
+  <text x="742" y="491" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="14" fill="#475569">FastAPI :8000</text>
+
+  <polygon points="938,454 972,468 938,482" fill="#CBD5E1" />
+  <path fill="#FFFFFF" stroke="#CBD5E1" d="M1016,410 H1124 A20,20 0 0 1 1144,430 V502 A20,20 0 0 1 1124,522 H1016 A20,20 0 0 1 996,502 V430 A20,20 0 0 1 1016,410 Z" />
+  
+  <g transform="translate(1026.0, 436.0) scale(1.4166666666666667)" fill="none" stroke="#F59E0B" stroke-width="2">
+    <path d="M4 6a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+    <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+    <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+  </g>
+  <text x="1068" y="459" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="700" fill="#0F172A">db</text>
+  <text x="1022" y="491" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="14" fill="#475569">Postgres 16</text>
+
+  <path fill="#F59E0B" fill-opacity="0.12" stroke="#F59E0B" d="M987,226 H1123 A15,15 0 0 1 1138,241 V269 A15,15 0 0 1 1123,284 H987 A15,15 0 0 1 972,269 V241 A15,15 0 0 1 987,226 Z" />
+  <text x="998" y="251" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" font-weight="700" fill="#0F172A">Persistent volume</text>
+  <text x="1000" y="273" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="13" fill="#475569">pgdata</text>
+  <line x1="1054" y1="284" x2="1070" y2="410" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6 6" />
+
+  <path fill="#2563EB" fill-opacity="0.08" stroke="#2563EB" d="M114,606 H420 A16,16 0 0 1 436,622 V648 A16,16 0 0 1 420,664 H114 A16,16 0 0 1 98,648 V622 A16,16 0 0 1 114,606 Z" />
+  <text x="124" y="641" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#475569">Cổng public chỉ nằm ở gateway Nginx.</text>
+  <path fill="#00A676" fill-opacity="0.08" stroke="#00A676" d="M488,606 H794 A16,16 0 0 1 810,622 V648 A16,16 0 0 1 794,664 H488 A16,16 0 0 1 472,648 V622 A16,16 0 0 1 488,606 Z" />
+  <text x="498" y="641" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#475569">Backend và DB trao đổi trong mạng riêng.</text>
+  <path fill="#F59E0B" fill-opacity="0.10" stroke="#F59E0B" d="M862,606 H1168 A16,16 0 0 1 1184,622 V648 A16,16 0 0 1 1168,664 H862 A16,16 0 0 1 846,648 V622 A16,16 0 0 1 862,606 Z" />
+  <text x="872" y="641" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#475569">Dữ liệu sống bền qua volume PostgreSQL.</text>
+
+  <text x="56" y="690" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#94A3B8">08 · Containerization Design</text>
+</svg>

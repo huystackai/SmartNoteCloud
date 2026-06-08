@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect x="0" y="0" width="1280" height="720" fill="#F8FAFC"/>
+  <text x="56" y="72" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="38" font-weight="700" fill="#0F172A">Workflow chức năng: từ ghi chú đến ôn tập</text>
+  <rect x="56" y="102" width="1168" height="52" rx="14" fill="#2563EB" fill-opacity="0.08"/>
+  <text x="78" y="135" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#0F172A">Người dùng tạo dữ liệu thật trong quá trình demo, sau đó kiểm tra được ở PostgreSQL bằng DBeaver hoặc psql.</text>
+  <g id="flow">
+    <rect x="70" y="232" width="236" height="210" rx="20" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <circle cx="104" cy="268" r="18" fill="#2563EB"/>
+    <text x="104" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">1</text>
+    <text x="96" y="326" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="700" fill="#0F172A">Tạo note</text>
+    <text x="96" y="362" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Page + blocks</text>
+    <text x="96" y="388" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Nội dung Cloud Computing</text>
+    <polygon points="328,322 356,338 328,354" fill="#CBD5E1"/>
+    <rect x="378" y="232" width="236" height="210" rx="20" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <circle cx="412" cy="268" r="18" fill="#00A676"/>
+    <text x="412" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">2</text>
+    <text x="404" y="326" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="700" fill="#0F172A">AI tóm tắt</text>
+    <text x="404" y="362" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Gọi Mimo API</text>
+    <text x="404" y="388" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Lưu summary về page</text>
+    <polygon points="636,322 664,338 636,354" fill="#CBD5E1"/>
+    <rect x="686" y="232" width="236" height="210" rx="20" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <circle cx="720" cy="268" r="18" fill="#00A676"/>
+    <text x="720" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">3</text>
+    <text x="712" y="326" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="700" fill="#0F172A">Sinh flashcard</text>
+    <text x="712" y="362" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Q/A từ note</text>
+    <text x="712" y="388" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Thêm vào deck</text>
+    <polygon points="944,322 972,338 944,354" fill="#CBD5E1"/>
+    <rect x="994" y="232" width="216" height="210" rx="20" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <circle cx="1028" cy="268" r="18" fill="#F59E0B"/>
+    <text x="1028" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">4</text>
+    <text x="1020" y="326" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="700" fill="#0F172A">Review</text>
+    <text x="1020" y="362" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Again / Hard / Good / Easy</text>
+    <text x="1020" y="388" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Sinh lịch ôn tập</text>
+  </g>
+  <g id="evidence">
+    <rect x="180" y="518" width="920" height="78" rx="18" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="212" y="552" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" fill="#475569">Database evidence</text>
+    <text x="212" y="580" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="18" fill="#0F172A">users → workspaces → pages → blocks → decks → cards → card_reviews</text>
+  </g>
+  <text x="56" y="690" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#94A3B8">04 · Feature Workflow</text>
+</svg>

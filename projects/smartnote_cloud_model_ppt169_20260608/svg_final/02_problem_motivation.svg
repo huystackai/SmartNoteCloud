@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect x="0" y="0" width="1280" height="720" fill="#F8FAFC" />
+  <text x="56" y="72" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="38" font-weight="700" fill="#0F172A">Vấn đề: không chỉ làm app, mà phải chứng minh được Cloud</text>
+  <path fill="#2563EB" fill-opacity="0.08" d="M70,98 H1210 A14,14 0 0 1 1224,112 V134 A14,14 0 0 1 1210,148 H70 A14,14 0 0 1 56,134 V112 A14,14 0 0 1 70,98 Z" />
+  <text x="78" y="129" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#0F172A">Mục tiêu báo cáo: có quy trình chạy thật, có kiến trúc rõ và phân biệt được IaaS, PaaS, SaaS bằng chính project.</text>
+  <g id="problem-cards">
+    <path fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" d="M86,190 H390 A18,18 0 0 1 408,208 V462 A18,18 0 0 1 390,480 H86 A18,18 0 0 1 68,462 V208 A18,18 0 0 1 86,190 Z" />
+    
+  <g transform="translate(94.0, 220.0) scale(1.4166666666666667)" fill="none" stroke="#2563EB" stroke-width="2">
+    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+  </g>
+    <text x="94" y="284" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="700" fill="#0F172A">Người học cần công cụ</text>
+    <text x="94" y="326" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">Ghi chú rời rạc khó ôn tập.</text>
+    <text x="94" y="358" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">Flashcard thủ công tốn thời gian.</text>
+    <text x="94" y="390" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">AI giúp tóm tắt và tạo câu hỏi.</text>
+    <path fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" d="M488,190 H792 A18,18 0 0 1 810,208 V462 A18,18 0 0 1 792,480 H488 A18,18 0 0 1 470,462 V208 A18,18 0 0 1 488,190 Z" />
+    
+  <g transform="translate(496.0, 220.0) scale(1.4166666666666667)" fill="none" stroke="#F59E0B" stroke-width="2">
+    <path d="M6.657 16c-2.572 0 -4.657 -2.007 -4.657 -4.483c0 -2.475 2.085 -4.482 4.657 -4.482c.393 -1.762 1.794 -3.2 3.675 -3.773c1.88 -.572 3.956 -.193 5.444 1c1.488 1.19 2.162 3.007 1.77 4.769h.99c1.913 0 3.464 1.56 3.464 3.486c0 1.927 -1.551 3.487 -3.465 3.487h-11.878" />
+    <path d="M12 16v5" />
+    <path d="M16 16v4a1 1 0 0 0 1 1h4" />
+    <path d="M8 16v4a1 1 0 0 1 -1 1h-4" />
+  </g>
+    <text x="496" y="284" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="700" fill="#0F172A">Báo cáo Cloud cần bằng chứng</text>
+    <text x="496" y="326" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">Không dừng ở localhost.</text>
+    <text x="496" y="358" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">Cần domain, HTTPS, Docker, DB.</text>
+    <text x="496" y="390" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">Có health check và dữ liệu thật.</text>
+    <path fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" d="M890,190 H1194 A18,18 0 0 1 1212,208 V462 A18,18 0 0 1 1194,480 H890 A18,18 0 0 1 872,462 V208 A18,18 0 0 1 890,190 Z" />
+    
+  <g transform="translate(898.0, 220.0) scale(1.4166666666666667)" fill="none" stroke="#00A676" stroke-width="2">
+    <path d="M19 8.268a2 2 0 0 1 1 1.732v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2h3" />
+    <path d="M5 15.734a2 2 0 0 1 -1 -1.734v-8a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-3" />
+  </g>
+    <text x="898" y="284" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="700" fill="#0F172A">Cần nhìn ra service model</text>
+    <text x="898" y="326" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">EC2 là IaaS.</text>
+    <text x="898" y="358" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">Beanstalk/App Runner là PaaS.</text>
+    <text x="898" y="390" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#475569">Mimo AI API là SaaS/API service.</text>
+  </g>
+  <path fill="#0F172A" d="M132,532 H1148 A20,20 0 0 1 1168,552 V594 A20,20 0 0 1 1148,614 H132 A20,20 0 0 1 112,594 V552 A20,20 0 0 1 132,532 Z" />
+  <text x="146" y="568" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">Insight báo cáo</text>
+  <text x="146" y="598" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#CBD5E1">SmartNoteCloud được thiết kế như một demo cloud-native nhỏ nhưng có đủ thành phần để giải thích hạ tầng, nền tảng và dịch vụ.</text>
+  <text x="56" y="690" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#94A3B8">02 · Problem &amp; Motivation</text>
+</svg>

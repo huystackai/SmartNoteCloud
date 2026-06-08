@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect x="0" y="0" width="1280" height="720" fill="#F8FAFC"/>
+  <text x="56" y="72" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="38" font-weight="700" fill="#0F172A">SmartNoteCloud là gì?</text>
+  <text x="58" y="112" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#475569">Một web app ghi chú AI và flashcard, đủ nhỏ để demo nhưng đủ thành phần để phân tích cloud-native.</text>
+  <g id="core">
+    <rect x="448" y="206" width="384" height="214" rx="28" fill="#2563EB"/>
+    <text x="640" y="282" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">MindDeckNote Lite</text>
+    <text x="640" y="322" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#DBEAFE">Notes + AI Summary + Flashcards</text>
+    <rect x="560" y="350" width="160" height="36" rx="18" fill="#FFFFFF" fill-opacity="0.16" stroke="#FFFFFF" stroke-opacity="0.4"/>
+    <text x="640" y="374" text-anchor="middle" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="15" fill="#FFFFFF">React / FastAPI</text>
+  </g>
+  <g id="feature-cards">
+    <rect x="86" y="176" width="280" height="126" rx="18" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="112" y="218" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" font-weight="700" fill="#0F172A">Auth</text>
+    <text x="112" y="252" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Register, login, JWT</text>
+    <text x="112" y="276" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">bcrypt password hash</text>
+    <rect x="86" y="356" width="280" height="126" rx="18" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="112" y="398" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" font-weight="700" fill="#0F172A">Notes</text>
+    <text x="112" y="432" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Workspace, page, block editor</text>
+    <text x="112" y="456" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Search nội dung</text>
+    <rect x="914" y="176" width="280" height="126" rx="18" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="940" y="218" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" font-weight="700" fill="#0F172A">AI</text>
+    <text x="940" y="252" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Summarize note</text>
+    <text x="940" y="276" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Generate flashcards</text>
+    <rect x="914" y="356" width="280" height="126" rx="18" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="940" y="398" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" font-weight="700" fill="#0F172A">Review</text>
+    <text x="940" y="432" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Deck, card, due cards</text>
+    <text x="940" y="456" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#475569">Again / Hard / Good / Easy</text>
+  </g>
+  <g id="connectors" stroke="#CBD5E1" stroke-width="2">
+    <line x1="366" y1="239" x2="448" y2="276"/>
+    <line x1="366" y1="419" x2="448" y2="350"/>
+    <line x1="832" y1="276" x2="914" y2="239"/>
+    <line x1="832" y1="350" x2="914" y2="419"/>
+  </g>
+  <rect x="186" y="552" width="908" height="58" rx="18" fill="#00A676" fill-opacity="0.10" stroke="#00A676" stroke-width="1.5"/>
+  <text x="640" y="588" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="19" font-weight="700" fill="#0F172A">Điểm quan trọng: sản phẩm đủ chức năng để tạo dữ liệu thật và kiểm chứng database khi demo.</text>
+  <text x="56" y="690" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#94A3B8">03 · Product Overview</text>
+</svg>
