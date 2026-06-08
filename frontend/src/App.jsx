@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ChatCircleDots, PaperPlaneRight } from '@phosphor-icons/react';
+import { Cards, ChatCircleDots, PaperPlaneRight } from '@phosphor-icons/react';
 import { api, getToken, setToken } from './api/client';
 import AuthPanel from './components/AuthPanel';
 
@@ -76,6 +76,8 @@ export default function App() {
   const [chatQuota, setChatQuota] = useState({ used: 0, remaining: 8, limit: 8 });
   const [chatLoading, setChatLoading] = useState(false);
   const [chatLoaded, setChatLoaded] = useState(false);
+  const [chatCardSaving, setChatCardSaving] = useState('');
+  const [chatFlashcards, setChatFlashcards] = useState({});
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [aiLoading, setAiLoading] = useState('');
@@ -407,6 +409,44 @@ export default function App() {
     }
   }
 
+  async function createFlashcardFromChat(message) {
+    if (!message?.question || !message?.answer || message.pending || message.isTyping || chatCardSaving) return;
+
+    setError('');
+    setNotice('');
+    setChatCardSaving(String(message.id));
+    try {
+      let deck = activeDeck;
+      if (!deck && workspace) {
+        deck = await api.createDeck({
+          workspace_id: workspace.id,
+          name: 'AI Chat Flashcards',
+          description: 'Flashcards tạo từ câu hỏi trong Chat AI'
+        });
+        setActiveDeckId(deck.id);
+      }
+      if (!deck) {
+        throw new Error('Chưa có deck để lưu flashcard.');
+      }
+
+      await api.createCard({
+        deck_id: deck.id,
+        page_id: activePage?.id || null,
+        front: cleanChatText(message.question).slice(0, 4000),
+        back: cleanChatText(message.answer).slice(0, 8000),
+        source_text: `AI Chat\n\nQ: ${cleanChatText(message.question)}\n\nA: ${cleanChatText(message.answer)}`.slice(0, 12000),
+        type: 'basic'
+      });
+      setChatFlashcards((current) => ({ ...current, [message.id]: true }));
+      await refreshWorkspace(deck.id);
+      setNotice('Đã tạo flashcard từ câu trả lời AI.');
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setChatCardSaving('');
+    }
+  }
+
   async function toggleUserLock(targetUser) {
     setError('');
     try {
@@ -463,6 +503,8 @@ export default function App() {
     setChatQuestion('');
     setChatQuota({ used: 0, remaining: 8, limit: 8 });
     setChatLoaded(false);
+    setChatCardSaving('');
+    setChatFlashcards({});
     if (chatTypingTimer.current) {
       window.clearTimeout(chatTypingTimer.current);
       chatTypingTimer.current = null;
@@ -735,6 +777,25 @@ export default function App() {
                           </mark>
                         </div>
                         <p className={message.isTyping ? 'typing-answer' : ''}>{message.answer}</p>
+                        {!message.pending && !message.isTyping && message.answer && (
+                          <div className="chat-answer-actions">
+                            <button
+                              className="ghost-button small chat-card-button"
+                              onClick={() => createFlashcardFromChat(message)}
+                              disabled={chatCardSaving === String(message.id) || chatFlashcards[message.id]}
+                              type="button"
+                            >
+                              <Cards size={17} weight="duotone" />
+                              <span>
+                                {chatFlashcards[message.id]
+                                  ? 'Đã tạo flashcard'
+                                  : chatCardSaving === String(message.id)
+                                    ? 'Đang tạo...'
+                                    : 'Tạo flashcard'}
+                              </span>
+                            </button>
+                          </div>
+                        )}
                         <small>{message.pending ? 'Đang nhận câu trả lời' : new Date(message.created_at).toLocaleString('vi-VN')}</small>
                       </div>
                     </article>
