@@ -363,7 +363,19 @@ export default function App() {
         </nav>
 
         <div className="header-actions">
-          <span>{user.username}</span>
+          {user.is_admin && (
+            <button
+              className={activeView === 'admin' ? 'admin-shortcut active' : 'admin-shortcut'}
+              onClick={() => setActiveView('admin')}
+              type="button"
+            >
+              Admin
+            </button>
+          )}
+          <span className="user-chip">
+            {user.username}
+            {user.is_admin && <small>Admin</small>}
+          </span>
           <button className="ghost-button small" onClick={logout}>Logout</button>
         </div>
       </header>

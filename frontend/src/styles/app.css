@@ -396,6 +396,41 @@ button:disabled {
   min-width: 0;
 }
 
+.admin-shortcut {
+  min-height: 34px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--accent);
+  color: white;
+  padding: 0 14px;
+  font-size: 0.84rem;
+  font-weight: 900;
+  white-space: nowrap;
+  box-shadow: 0 10px 20px rgba(47, 111, 80, 0.14);
+}
+
+.admin-shortcut.active {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.user-chip {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.1;
+}
+
+.user-chip small {
+  margin-top: 3px;
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 .app-main {
   width: min(1480px, 100%);
   margin: 0 auto;
@@ -1106,6 +1141,10 @@ button:disabled {
 
   .header-actions {
     justify-content: space-between;
+  }
+
+  .user-chip {
+    align-items: flex-start;
   }
 
   .workspace-grid,
