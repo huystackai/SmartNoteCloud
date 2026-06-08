@@ -47,6 +47,11 @@ export default function App() {
   const [generatedCards, setGeneratedCards] = useState([]);
   const [search, setSearch] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [adminUsers, setAdminUsers] = useState([]);
+  const [adminIPs, setAdminIPs] = useState([]);
+  const [adminStats, setAdminStats] = useState(null);
+  const [adminIpForm, setAdminIpForm] = useState({ ip_address: '', reason: '' });
+  const [adminLoading, setAdminLoading] = useState(false);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [aiLoading, setAiLoading] = useState('');
@@ -59,6 +64,10 @@ export default function App() {
     [activeDeckId, decks]
   );
   const dueCard = dueCards[0];
+  const visibleMenuItems = useMemo(
+    () => (user?.is_admin ? [...menuItems, { id: 'admin', label: 'Admin' }] : menuItems),
+    [user]
+  );
 
   async function loadApp() {
     setError('');
@@ -131,6 +140,12 @@ export default function App() {
     }, 300);
     return () => clearTimeout(timer);
   }, [search]);
+
+  useEffect(() => {
+    if (activeView === 'admin' && user?.is_admin && adminUsers.length === 0 && adminIPs.length === 0) {
+      loadAdmin();
+    }
+  }, [activeView, user?.is_admin]);
 
   async function createPage() {
     if (!workspace) return;
@@ -244,6 +259,63 @@ export default function App() {
     setDueCards(await api.deckCards(activeDeck.id, true));
   }
 
+  async function loadAdmin() {
+    if (!user?.is_admin) return;
+    setAdminLoading(true);
+    setError('');
+    try {
+      const [stats, users, ips] = await Promise.all([api.adminStats(), api.adminUsers(), api.adminIPAddresses()]);
+      setAdminStats(stats);
+      setAdminUsers(users);
+      setAdminIPs(ips);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setAdminLoading(false);
+    }
+  }
+
+  async function toggleUserLock(targetUser) {
+    setError('');
+    try {
+      if (targetUser.is_locked) {
+        await api.unlockUser(targetUser.id);
+        setNotice(`Đã mở khóa ${targetUser.username}.`);
+      } else {
+        await api.lockUser(targetUser.id);
+        setNotice(`Đã khóa ${targetUser.username}.`);
+      }
+      await loadAdmin();
+    } catch (err) {
+      setError(err.message);
+    }
+  }
+
+  async function blockIP(ipAddress, reason = '') {
+    const targetIP = ipAddress.trim();
+    if (!targetIP) return;
+    setError('');
+    try {
+      await api.blockIP({ ip_address: targetIP, reason: reason.trim() || null });
+      setAdminIpForm({ ip_address: '', reason: '' });
+      setNotice(`Đã chặn IP ${targetIP}.`);
+      await loadAdmin();
+    } catch (err) {
+      setError(err.message);
+    }
+  }
+
+  async function unblockIP(ipAddress) {
+    setError('');
+    try {
+      await api.unblockIP(ipAddress);
+      setNotice(`Đã bỏ chặn IP ${ipAddress}.`);
+      await loadAdmin();
+    } catch (err) {
+      setError(err.message);
+    }
+  }
+
   function logout() {
     setToken(null);
     setUser(null);
@@ -252,6 +324,10 @@ export default function App() {
     setDecks([]);
     setStats(null);
     setActivePage(null);
+    setAdminUsers([]);
+    setAdminIPs([]);
+    setAdminStats(null);
+    setActiveView('notes');
   }
 
   if (loading) {
@@ -274,7 +350,7 @@ export default function App() {
         </div>
 
         <nav className="top-menu" aria-label="Main menu">
-          {menuItems.map((item) => (
+          {visibleMenuItems.map((item) => (
             <button
               key={item.id}
               className={activeView === item.id ? 'active' : ''}
@@ -538,6 +614,159 @@ export default function App() {
                 <span>Mimo API</span>
               </div>
             </div>
+          </section>
+        )}
+
+        {activeView === 'admin' && user?.is_admin && (
+          <section className="admin-view">
+            <section className="panel admin-hero">
+              <div>
+                <span className="section-kicker">Admin access</span>
+                <h1>Quản lý tài khoản và IP truy cập</h1>
+                <p>Khóa tài khoản vi phạm hoặc chặn IP ở tầng ứng dụng. Các thao tác có hiệu lực ngay trên API.</p>
+              </div>
+              <button className="primary-action" onClick={loadAdmin} disabled={adminLoading}>
+                {adminLoading ? 'Đang tải...' : 'Refresh'}
+              </button>
+            </section>
+
+            <section className="admin-stat-grid">
+              <div>
+                <strong>{adminStats?.active_users || 0}</strong>
+                <span>User đang truy cập</span>
+                <small>{adminStats?.window_minutes || 5} phút gần nhất</small>
+              </div>
+              <div>
+                <strong>{adminStats?.active_ips || 0}</strong>
+                <span>IP đang hoạt động</span>
+                <small>Theo request API</small>
+              </div>
+              <div>
+                <strong>{adminStats?.total_users || adminUsers.length}</strong>
+                <span>Tổng tài khoản</span>
+                <small>{adminStats?.locked_users || 0} tài khoản bị khóa</small>
+              </div>
+              <div>
+                <strong>{adminStats?.blocked_ips || 0}</strong>
+                <span>IP bị chặn</span>
+                <small>Blocklist ứng dụng</small>
+              </div>
+            </section>
+
+            <section className="admin-grid">
+              <section className="panel admin-panel">
+                <div className="panel-heading">
+                  <div>
+                    <h2>Tài khoản</h2>
+                    <p>{adminUsers.length} người dùng trong hệ thống</p>
+                  </div>
+                </div>
+
+                <div className="admin-table">
+                  <div className="admin-table-row admin-table-head">
+                    <span>User</span>
+                    <span>Quyền</span>
+                    <span>Trạng thái</span>
+                    <span>IP gần nhất</span>
+                    <span>Thao tác</span>
+                  </div>
+                  {adminUsers.map((targetUser) => {
+                    const lastIP = targetUser.ip_addresses?.[0];
+                    return (
+                      <div className="admin-table-row" key={targetUser.id}>
+                        <span>
+                          <strong>{targetUser.username}</strong>
+                          <small>{targetUser.email}</small>
+                        </span>
+                        <span>{targetUser.is_admin ? 'Admin' : 'User'}</span>
+                        <span>
+                          <mark className={targetUser.is_locked ? 'status-pill locked' : 'status-pill'}>
+                            {targetUser.is_locked ? 'Locked' : 'Active'}
+                          </mark>
+                        </span>
+                        <span>
+                          <code>{lastIP?.ip_address || 'Chưa có'}</code>
+                          {lastIP?.is_blocked && <small className="danger-text">IP bị chặn</small>}
+                        </span>
+                        <span>
+                          <button
+                            className={targetUser.is_locked ? 'ghost-button small' : 'ghost-button small danger'}
+                            onClick={() => toggleUserLock(targetUser)}
+                            disabled={targetUser.id === user.id}
+                          >
+                            {targetUser.is_locked ? 'Mở khóa' : 'Khóa'}
+                          </button>
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </section>
+
+              <section className="panel admin-panel">
+                <div className="panel-heading">
+                  <div>
+                    <h2>Địa chỉ IP</h2>
+                    <p>Theo dõi IP đã đăng nhập và IP đang bị block.</p>
+                  </div>
+                </div>
+
+                <form
+                  className="ip-block-form"
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    blockIP(adminIpForm.ip_address, adminIpForm.reason);
+                  }}
+                >
+                  <input
+                    className="field-input compact"
+                    value={adminIpForm.ip_address}
+                    onChange={(event) => setAdminIpForm({ ...adminIpForm, ip_address: event.target.value })}
+                    placeholder="VD: 113.161.10.25"
+                  />
+                  <input
+                    className="field-input compact"
+                    value={adminIpForm.reason}
+                    onChange={(event) => setAdminIpForm({ ...adminIpForm, reason: event.target.value })}
+                    placeholder="Lý do chặn"
+                  />
+                  <button className="primary-action small">Chặn IP</button>
+                </form>
+
+                <div className="admin-table ip-table">
+                  <div className="admin-table-row admin-table-head">
+                    <span>IP</span>
+                    <span>User</span>
+                    <span>Lượt</span>
+                    <span>Gần nhất</span>
+                    <span>Thao tác</span>
+                  </div>
+                  {adminIPs.map((ip) => (
+                    <div className="admin-table-row" key={`${ip.ip_address}-${ip.user_id || 'blocked'}`}>
+                      <span>
+                        <code>{ip.ip_address}</code>
+                        {ip.is_blocked && <small className="danger-text">{ip.block_reason || 'Blocked'}</small>}
+                      </span>
+                      <span>
+                        <strong>{ip.username || 'Không gắn user'}</strong>
+                        {ip.email && <small>{ip.email}</small>}
+                      </span>
+                      <span>{ip.request_count || 0}</span>
+                      <span>{ip.last_seen_at ? new Date(ip.last_seen_at).toLocaleString('vi-VN') : 'Chưa có'}</span>
+                      <span>
+                        {ip.is_blocked ? (
+                          <button className="ghost-button small" onClick={() => unblockIP(ip.ip_address)}>Bỏ chặn</button>
+                        ) : (
+                          <button className="ghost-button small danger" onClick={() => blockIP(ip.ip_address, 'Blocked from admin panel')}>
+                            Chặn
+                          </button>
+                        )}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            </section>
           </section>
         )}
       </main>

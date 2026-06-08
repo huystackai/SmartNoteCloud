@@ -13,6 +13,8 @@ class UserRead(BaseModel):
     id: int
     username: str
     email: EmailStr
+    is_admin: bool
+    is_locked: bool
     created_at: datetime
 
     model_config = {"from_attributes": True}

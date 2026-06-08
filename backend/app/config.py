@@ -9,6 +9,8 @@ class Settings(BaseSettings):
     jwt_algorithm: str = "HS256"
     jwt_expire_minutes: int = 1440
     backend_cors_origins: str = "http://localhost:5173,http://localhost"
+    admin_emails: str = "ntptuy.1910@gmail.com,giahuy.workhard@gmail.com"
+    active_window_minutes: int = 5
 
     mimo_api_url: str = ""
     mimo_api_key: str = ""
@@ -21,6 +23,10 @@ class Settings(BaseSettings):
     @property
     def cors_origins(self) -> list[str]:
         return [origin.strip() for origin in self.backend_cors_origins.split(",") if origin.strip()]
+
+    @property
+    def admin_email_list(self) -> set[str]:
+        return {email.strip().lower() for email in self.admin_emails.split(",") if email.strip()}
 
 
 @lru_cache

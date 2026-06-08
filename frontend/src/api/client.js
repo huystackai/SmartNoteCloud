@@ -60,5 +60,12 @@ export const api = {
   createCard: (payload) => request('/mind/cards', { method: 'POST', body: JSON.stringify(payload) }),
   reviewCard: (payload) => request('/mind/reviews', { method: 'POST', body: JSON.stringify(payload) }),
   stats: () => request('/mind/stats'),
-  search: (q) => request(`/mind/search?q=${encodeURIComponent(q)}`)
+  search: (q) => request(`/mind/search?q=${encodeURIComponent(q)}`),
+  adminStats: () => request('/admin/stats'),
+  adminUsers: () => request('/admin/users'),
+  adminIPAddresses: () => request('/admin/ip-addresses'),
+  lockUser: (id) => request(`/admin/users/${id}/lock`, { method: 'POST' }),
+  unlockUser: (id) => request(`/admin/users/${id}/unlock`, { method: 'POST' }),
+  blockIP: (payload) => request('/admin/ip-blocks', { method: 'POST', body: JSON.stringify(payload) }),
+  unblockIP: (ipAddress) => request(`/admin/ip-blocks/${encodeURIComponent(ipAddress)}`, { method: 'DELETE' })
 };
