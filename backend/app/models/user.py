@@ -20,6 +20,7 @@ class User(Base):
     workspaces = relationship("Workspace", back_populates="owner", cascade="all, delete-orphan")
     card_reviews = relationship("CardReview", back_populates="user", cascade="all, delete-orphan")
     ip_addresses = relationship("UserIPAddress", back_populates="user", cascade="all, delete-orphan")
+    ai_chat_messages = relationship("AIChatMessage", back_populates="user", cascade="all, delete-orphan")
 
 
 class UserIPAddress(Base):

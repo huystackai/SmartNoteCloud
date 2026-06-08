@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { ChatCircleDots, PaperPlaneRight } from '@phosphor-icons/react';
 import { api, getToken, setToken } from './api/client';
 import AuthPanel from './components/AuthPanel';
 
@@ -13,6 +14,7 @@ const blockTypes = [
 const menuItems = [
   { id: 'notes', label: 'Notes' },
   { id: 'ai', label: 'AI Tools' },
+  { id: 'chat', label: 'Chat AI' },
   { id: 'flashcards', label: 'Flashcards' },
   { id: 'dashboard', label: 'Dashboard' }
 ];
@@ -52,6 +54,11 @@ export default function App() {
   const [adminStats, setAdminStats] = useState(null);
   const [adminIpForm, setAdminIpForm] = useState({ ip_address: '', reason: '' });
   const [adminLoading, setAdminLoading] = useState(false);
+  const [chatMessages, setChatMessages] = useState([]);
+  const [chatQuestion, setChatQuestion] = useState('');
+  const [chatQuota, setChatQuota] = useState({ used: 0, remaining: 8, limit: 8 });
+  const [chatLoading, setChatLoading] = useState(false);
+  const [chatLoaded, setChatLoaded] = useState(false);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [aiLoading, setAiLoading] = useState('');
@@ -146,6 +153,12 @@ export default function App() {
       loadAdmin();
     }
   }, [activeView, user?.is_admin]);
+
+  useEffect(() => {
+    if (activeView === 'chat' && !chatLoaded) {
+      loadChat();
+    }
+  }, [activeView, chatLoaded]);
 
   async function createPage() {
     if (!workspace) return;
@@ -275,6 +288,38 @@ export default function App() {
     }
   }
 
+  async function loadChat() {
+    setError('');
+    try {
+      const history = await api.chatHistory();
+      setChatMessages(history.messages || []);
+      setChatQuota({ used: history.used, remaining: history.remaining, limit: history.limit });
+      setChatLoaded(true);
+    } catch (err) {
+      setError(err.message);
+    }
+  }
+
+  async function sendChat(event) {
+    event.preventDefault();
+    const question = chatQuestion.trim();
+    if (!question || chatLoading || chatQuota.remaining <= 0) return;
+
+    setChatLoading(true);
+    setError('');
+    try {
+      const result = await api.askChat({ question });
+      setChatMessages((current) => [...current, result.message]);
+      setChatQuota({ used: result.used, remaining: result.remaining, limit: result.limit });
+      setChatQuestion('');
+    } catch (err) {
+      setError(err.message);
+      await loadChat();
+    } finally {
+      setChatLoading(false);
+    }
+  }
+
   async function toggleUserLock(targetUser) {
     setError('');
     try {
@@ -327,6 +372,10 @@ export default function App() {
     setAdminUsers([]);
     setAdminIPs([]);
     setAdminStats(null);
+    setChatMessages([]);
+    setChatQuestion('');
+    setChatQuota({ used: 0, remaining: 8, limit: 8 });
+    setChatLoaded(false);
     setActiveView('notes');
   }
 
@@ -534,6 +583,85 @@ export default function App() {
                   ))}
                 </div>
               )}
+            </section>
+          </section>
+        )}
+
+        {activeView === 'chat' && (
+          <section className="chat-view">
+            <aside className="panel chat-side">
+              <div className="chat-identity">
+                <div className="chat-icon" aria-hidden="true">
+                  <ChatCircleDots size={30} weight="duotone" />
+                </div>
+                <div>
+                  <span className="section-kicker">Rule based assistant</span>
+                  <h2>Hỏi nhanh về cloud và note</h2>
+                  <p>Câu quen thuộc sẽ trả lời bằng rule. Câu còn lại sẽ chuyển sang AI provider.</p>
+                </div>
+              </div>
+
+              <div className="quota-card">
+                <div>
+                  <span>Lượt còn lại</span>
+                  <strong>{chatQuota.remaining}/{chatQuota.limit}</strong>
+                </div>
+                <div className="quota-meter" aria-hidden="true">
+                  <span style={{ width: `${chatQuota.limit ? (chatQuota.used / chatQuota.limit) * 100 : 0}%` }} />
+                </div>
+                <p>Mỗi tài khoản được hỏi tối đa {chatQuota.limit} lần. Lượt chỉ tính khi hệ thống đã trả lời thành công.</p>
+              </div>
+            </aside>
+
+            <section className="panel chat-panel">
+              <div className="chat-panel-header">
+                <div>
+                  <h2>Chat AI</h2>
+                  <p>{chatMessages.length} câu đã hỏi trong tài khoản này</p>
+                </div>
+                <button className="ghost-button small" onClick={loadChat} disabled={chatLoading}>Refresh</button>
+              </div>
+
+              <div className="chat-messages">
+                {chatMessages.length === 0 ? (
+                  <div className="empty-state chat-empty">Thử hỏi: Hệ thống này đủ IaaS đến SaaS chưa?</div>
+                ) : (
+                  chatMessages.map((message) => (
+                    <article className="chat-turn" key={message.id}>
+                      <div className="chat-question">
+                        <span>Bạn</span>
+                        <p>{message.question}</p>
+                      </div>
+                      <div className="chat-answer">
+                        <div className="assistant-line">
+                          <span className="assistant-avatar" aria-hidden="true">
+                            <ChatCircleDots size={18} weight="duotone" />
+                          </span>
+                          <strong>MindDeck AI</strong>
+                          <mark className="source-pill">{message.source === 'rule' ? 'Rule based' : 'AI provider'}</mark>
+                        </div>
+                        <p>{message.answer}</p>
+                        <small>{new Date(message.created_at).toLocaleString('vi-VN')}</small>
+                      </div>
+                    </article>
+                  ))
+                )}
+              </div>
+
+              <form className="chat-form" onSubmit={sendChat}>
+                <textarea
+                  className="field-input chat-input"
+                  value={chatQuestion}
+                  onChange={(event) => setChatQuestion(event.target.value)}
+                  placeholder={chatQuota.remaining <= 0 ? 'Tài khoản đã hết lượt hỏi AI' : 'Nhập câu hỏi của bạn'}
+                  rows={2}
+                  disabled={chatLoading || chatQuota.remaining <= 0}
+                />
+                <button className="primary-action send-button" disabled={chatLoading || chatQuota.remaining <= 0 || !chatQuestion.trim()}>
+                  <PaperPlaneRight size={18} weight="bold" />
+                  <span>{chatLoading ? 'Đang hỏi...' : 'Gửi'}</span>
+                </button>
+              </form>
             </section>
           </section>
         )}

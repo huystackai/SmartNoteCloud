@@ -1,4 +1,6 @@
 import json
+import re
+import unicodedata
 from typing import Any
 
 import httpx
@@ -131,6 +133,67 @@ class AIService:
             return "\n".join(lines).strip()
         return text
 
+    def _normalize_text(self, text: str) -> str:
+        ascii_text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii")
+        return re.sub(r"\s+", " ", ascii_text.lower()).strip()
+
+    def rule_based_chat(self, question: str) -> str | None:
+        text = self._normalize_text(question)
+        if not text:
+            return None
+
+        if text in {"hi", "hello", "xin chao", "chao"} or any(word in text for word in ("xin chao", "hello", "chao")):
+            return (
+                "Chào bạn. Mình có thể giải thích kiến trúc MindDeckNote, các lớp IaaS, PaaS, SaaS, "
+                "Docker, FastAPI, PostgreSQL, AI API, hoặc cách phần quota 8 lượt chat hoạt động."
+            )
+
+        if "quota" in text or "8" in text or "gioi han" in text or "luot" in text:
+            return (
+                "Rule based: mỗi tài khoản có tối đa 8 lượt hỏi AI. Backend đếm số câu đã trả lời thành công "
+                "trong bảng ai_chat_messages. Khi đã đủ 8 lượt, API sẽ trả lỗi 429 và giao diện khóa ô nhập."
+            )
+
+        if "iaas" in text and "saas" in text:
+            return (
+                "Rule based: hệ thống hiện đã thể hiện rõ IaaS và SaaS. IaaS là EC2 chạy Docker, Nginx, backend "
+                "và PostgreSQL. SaaS là AI API bên ngoài dùng cho tóm tắt, flashcards và chat. Nếu cần chứng minh "
+                "đủ cả IaaS, PaaS, SaaS thì nên bổ sung thêm một dịch vụ managed như database managed hoặc app runner "
+                "để phần PaaS thật rõ."
+            )
+
+        if "iaas" in text or "ec2" in text or "infrastructure" in text:
+            return (
+                "IaaS của hệ thống là EC2: mình tự quản máy chủ, Docker, network, Nginx, security group "
+                "và tiến trình deploy. Đây là tầng hạ tầng thuê theo nhu cầu."
+            )
+
+        if "paas" in text or "platform" in text:
+            return (
+                "PaaS có thể được thể hiện bằng cách dùng dịch vụ quản lý sẵn như database managed, app runner, "
+                "hoặc một nền tảng deploy tự động. Bản hiện tại chủ yếu chạy IaaS trên EC2, còn PaaS là hướng mở rộng hợp lý."
+            )
+
+        if "saas" in text or "mimo" in text or "ai api" in text or "external ai" in text:
+            return (
+                "SaaS trong demo là phần AI API bên ngoài: ứng dụng gọi dịch vụ AI để tóm tắt note, sinh flashcards "
+                "và trả lời chat. Người dùng chỉ dùng tính năng qua giao diện, không cần quản mô hình."
+            )
+
+        if "docker" in text or "container" in text or "compose" in text:
+            return (
+                "Docker Compose đóng gói frontend, backend, database và Nginx thành các container riêng. "
+                "Cách này làm kiến trúc dễ demo, dễ rebuild và tách rõ trách nhiệm giữa các tầng."
+            )
+
+        if "admin" in text or "ip" in text or "khoa tai khoan" in text or "chan ip" in text:
+            return (
+                "Admin có thể xem user đang hoạt động, khóa tài khoản và chặn IP ở tầng ứng dụng. "
+                "Mỗi request đăng nhập đều được kiểm tra trạng thái tài khoản và blocklist IP."
+            )
+
+        return None
+
     def _extract_json(self, raw_text: str) -> Any:
         text = self._strip_code_fence(raw_text)
         try:
@@ -180,6 +243,22 @@ class AIService:
                 "You are an assistant for a student note and spaced repetition app. Respond in Vietnamese.",
                 prompt,
                 temperature=0.2,
+            )
+        )
+
+    async def chat_answer(self, question: str) -> str:
+        prompt = (
+            "Tra loi cau hoi cua nguoi dung bang tieng Viet, ngan gon va ro rang. "
+            "Neu cau hoi lien quan den MindDeckNote, cloud, note, flashcard, AI API, FastAPI, React, Docker, Nginx "
+            "thi uu tien cau tra loi thuc te va co cau truc. "
+            "Khong bia dat thong tin rieng tu hoac cau hinh khong co trong cau hoi.\n\n"
+            f"Question: {question}"
+        )
+        return await self._complete(
+            self._chat_payload(
+                "You are a friendly in-app AI assistant for MindDeckNote. Respond in Vietnamese.",
+                prompt,
+                temperature=0.3,
             )
         )
 

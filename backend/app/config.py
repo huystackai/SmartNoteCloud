@@ -17,6 +17,7 @@ class Settings(BaseSettings):
     mimo_model: str = "mimo-chat"
     ai_timeout_seconds: int = 20
     ai_max_retries: int = 3
+    ai_chat_limit: int = 8
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 

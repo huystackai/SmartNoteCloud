@@ -9,11 +9,12 @@
     "preview": "vite preview --host 0.0.0.0"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
     "@vitejs/plugin-react": "latest",
-    "vite": "latest",
+    "bootstrap": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "bootstrap": "latest"
+    "vite": "latest"
   },
   "devDependencies": {}
 }

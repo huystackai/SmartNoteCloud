@@ -61,6 +61,8 @@ export const api = {
   reviewCard: (payload) => request('/mind/reviews', { method: 'POST', body: JSON.stringify(payload) }),
   stats: () => request('/mind/stats'),
   search: (q) => request(`/mind/search?q=${encodeURIComponent(q)}`),
+  chatHistory: () => request('/ai/chat/history'),
+  askChat: (payload) => request('/ai/chat', { method: 'POST', body: JSON.stringify(payload) }),
   adminStats: () => request('/admin/stats'),
   adminUsers: () => request('/admin/users'),
   adminIPAddresses: () => request('/admin/ip-addresses'),
