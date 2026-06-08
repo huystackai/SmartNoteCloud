@@ -51,6 +51,72 @@ function cleanChatMessage(message) {
   return { ...message, answer: cleanChatText(message.answer) };
 }
 
+function shortText(text, maxLength = 90) {
+  const cleaned = cleanChatText(text).replace(/\s+/g, ' ');
+  return cleaned.length > maxLength ? `${cleaned.slice(0, maxLength - 1).trim()}...` : cleaned;
+}
+
+function sentenceCandidates(answer) {
+  const stripped = cleanChatText(answer).replace(/^Rule based:\s*/i, '');
+  const lineItems = stripped
+    .split('\n')
+    .map((line) => line.replace(/^\s*[-*•]\s*/, '').replace(/^\s*\d+[.)]\s*/, '').trim())
+    .filter(Boolean);
+
+  const sentences = lineItems.flatMap((line) => {
+    const parts = line.match(/[^.!?\n]+[.!?]?/g) || [line];
+    return parts.map((part) => part.trim()).filter(Boolean);
+  });
+
+  return sentences
+    .map((sentence) => sentence.replace(/\s+/g, ' ').trim())
+    .filter((sentence, index, list) => sentence.length >= 24 && list.indexOf(sentence) === index);
+}
+
+function chunkLongPoint(point) {
+  if (point.length <= 260) return [point];
+  const words = point.split(/\s+/);
+  const chunks = [];
+  let current = [];
+  words.forEach((word) => {
+    current.push(word);
+    if (current.join(' ').length >= 190) {
+      chunks.push(current.join(' '));
+      current = [];
+    }
+  });
+  if (current.length) chunks.push(current.join(' '));
+  return chunks;
+}
+
+function makeFlashcardQuestion(originalQuestion, point, index) {
+  const subjectMatch = point.match(/^(.{4,72}?)\s+là\s+/i);
+  if (subjectMatch?.[1]) {
+    return `${subjectMatch[1].trim()} là gì?`;
+  }
+
+  const colonSubject = point.split(':')[0]?.trim();
+  if (colonSubject && colonSubject.length >= 4 && colonSubject.length <= 72 && colonSubject !== point) {
+    return `${colonSubject} là gì?`;
+  }
+
+  return `Ý ${index + 1} trong câu hỏi "${shortText(originalQuestion, 72)}" là gì?`;
+}
+
+function buildChatFlashcards(message) {
+  const points = sentenceCandidates(message.answer).flatMap(chunkLongPoint).slice(0, 8);
+  const usablePoints = points.length > 0 ? points : [cleanChatText(message.answer)];
+
+  return usablePoints.map((point, index) => ({
+    front: makeFlashcardQuestion(message.question, point, index).slice(0, 4000),
+    back: cleanChatText(point).slice(0, 8000),
+    source_text: `AI Chat\n\nCâu hỏi gốc: ${cleanChatText(message.question)}\n\nÝ ${index + 1}: ${cleanChatText(point)}`.slice(
+      0,
+      12000
+    )
+  }));
+}
+
 export default function App() {
   const [user, setUser] = useState(null);
   const [workspace, setWorkspace] = useState(null);
@@ -429,17 +495,22 @@ export default function App() {
         throw new Error('Chưa có deck để lưu flashcard.');
       }
 
-      await api.createCard({
-        deck_id: deck.id,
-        page_id: activePage?.id || null,
-        front: cleanChatText(message.question).slice(0, 4000),
-        back: cleanChatText(message.answer).slice(0, 8000),
-        source_text: `AI Chat\n\nQ: ${cleanChatText(message.question)}\n\nA: ${cleanChatText(message.answer)}`.slice(0, 12000),
-        type: 'basic'
-      });
-      setChatFlashcards((current) => ({ ...current, [message.id]: true }));
+      const cards = buildChatFlashcards(message);
+      await Promise.all(
+        cards.map((card) =>
+          api.createCard({
+            deck_id: deck.id,
+            page_id: activePage?.id || null,
+            front: card.front,
+            back: card.back,
+            source_text: card.source_text,
+            type: 'basic'
+          })
+        )
+      );
+      setChatFlashcards((current) => ({ ...current, [message.id]: cards.length }));
       await refreshWorkspace(deck.id);
-      setNotice('Đã tạo flashcard từ câu trả lời AI.');
+      setNotice(`Đã tạo ${cards.length} flashcards từ câu trả lời AI.`);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -788,10 +859,10 @@ export default function App() {
                               <Cards size={17} weight="duotone" />
                               <span>
                                 {chatFlashcards[message.id]
-                                  ? 'Đã tạo flashcard'
+                                  ? `Đã tạo ${chatFlashcards[message.id]} flashcards`
                                   : chatCardSaving === String(message.id)
                                     ? 'Đang tạo...'
-                                    : 'Tạo flashcard'}
+                                    : 'Tạo flashcards'}
                               </span>
                             </button>
                           </div>
